@@ -21,22 +21,22 @@ import {
 
 const SIDEBAR_ITEMS = [
   { icon: Home, label: 'Dashboard', href: '/dashboard' },
-  { icon: Activity, label: 'Threat Feed', href: '/dashboard/threats' },
-  { icon: Map, label: 'Map Intelligence', href: '/dashboard/map' },
-  { icon: AlertCircle, label: 'Report Threat', href: '/dashboard/threats/report' },
-  { icon: Users, label: 'Community', href: '/dashboard/community' },
-  { icon: BarChart3, label: 'Analytics', href: '/dashboard/analytics' },
-  { icon: Bell, label: 'Notifications', href: '/dashboard/notifications' },
+  { icon: Activity, label: 'Threat Feed', href: '/threats' },
+  { icon: Map, label: 'Map Intelligence', href: '/map' },
+  { icon: AlertCircle, label: 'Report Threat', href: '/threats/report' },
+  { icon: Users, label: 'Community', href: '/community' },
+  { icon: BarChart3, label: 'Analytics', href: '/analytics' },
+  { icon: Bell, label: 'Notifications', href: '/notifications' },
 ];
 
 const ADMIN_ITEMS = [
-  { icon: Shield, label: 'Moderation', href: '/dashboard/admin' },
-  { icon: Users, label: 'Users', href: '/dashboard/admin/users' },
-  { icon: AlertCircle, label: 'Threats', href: '/dashboard/admin/threats' },
+  { icon: Shield, label: 'Moderation', href: '/admin' },
+  { icon: Users, label: 'Users', href: '/admin/users' },
+  { icon: AlertCircle, label: 'Threats', href: '/admin/threats' },
 ];
 
 const BOTTOM_ITEMS = [
-  { icon: Settings, label: 'Settings', href: '/dashboard/settings' },
+  { icon: Settings, label: 'Settings', href: '/settings' },
   { icon: HelpCircle, label: 'Help', href: '#' },
 ];
 
