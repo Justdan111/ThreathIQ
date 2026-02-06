@@ -1,26 +1,230 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ThreatIQ Color Palette */
+:root {
+  /* Border radius */
+  --radius: 0.75rem;
+
+  /* Main backgrounds */
+  --background: #0F1729;      /* Deep navy blue background */
+  --foreground: #FFFFFF;       /* Pure white text */
+
+  /* Cards & surfaces with glass effect */
+  --card: #1A2332;             /* Elevated surface */
+  --card-foreground: #F9FAFB;  /* Card text */
+  
+  /* Popover */
+  --popover: #1A2332;
+  --popover-foreground: #F9FAFB;
+
+  /* Primary brand color - Bright Blue */
+  --primary: #2563EB;          /* Main brand blue */
+  --primary-foreground: #FFFFFF;
+
+  /* Secondary */
+  --secondary: #1E293B;        /* Subtle secondary */
+  --secondary-foreground: #F9FAFB;
+
+  /* Muted elements */
+  --muted: #64748B;            /* Muted backgrounds */
+  --muted-foreground: #94A3B8; /* Muted text */
+
+  /* Accent color - Cyan */
+  --accent: #22D3EE;           /* Bright cyan accent */
+  --accent-foreground: #0F1729;
+
+  /* Success/Verified - Green */
+  --success: #10B981;
+  --success-foreground: #FFFFFF;
+
+  /* Destructive/Critical - Red */
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  /* Border */
+  --border: #1E293B;           /* Subtle borders */
+  --input: #1A2332;
+  --ring: #2563EB;
+
+  /* Chart colors */
+  --chart-1: #2563EB;          /* Primary blue */
+  --chart-2: #EF4444;          /* Red for critical */
+  --chart-3: #F59E0B;          /* Orange for high */
+  --chart-4: #10B981;          /* Green for success */
+  --chart-5: #22D3EE;          /* Cyan for info */
+
+  /* Sidebar colors */
+  --sidebar: #0B1520;
+  --sidebar-foreground: #F9FAFB;
+  --sidebar-primary: #2563EB;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #22D3EE;
+  --sidebar-accent-foreground: #0F1729;
+  --sidebar-border: #1A2332;
+  --sidebar-ring: #2563EB;
+
+  /* ThreatIQ Specific Status Colors */
+  --color-critical: #EF4444;   /* Critical threats */
+  --color-high: #F59E0B;       /* High priority */
+  --color-medium: #F59E0B;     /* Medium priority */
+  --color-low: #22D3EE;        /* Low priority */
+  --color-success: #10B981;    /* Success states */
+  --color-info: #3B82F6;       /* Information */
+  --color-warning: #F59E0B;    /* Warnings */
+}
+
+.dark {
+  --background: #0F1729;
+  --foreground: #FFFFFF;
+  --card: #1A2332;
+  --card-foreground: #F9FAFB;
+  --popover: #1A2332;
+  --popover-foreground: #F9FAFB;
+  --primary: #2563EB;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1E293B;
+  --secondary-foreground: #F9FAFB;
+  --muted: #64748B;
+  --muted-foreground: #94A3B8;
+  --accent: #22D3EE;
+  --accent-foreground: #0F1729;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #1E293B;
+  --input: #1A2332;
+  --ring: #2563EB;
+  --chart-1: #2563EB;
+  --chart-2: #EF4444;
+  --chart-3: #F59E0B;
+  --chart-4: #10B981;
+  --chart-5: #22D3EE;
+  --sidebar: #0B1520;
+  --sidebar-foreground: #F9FAFB;
+  --sidebar-primary: #2563EB;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #22D3EE;
+  --sidebar-accent-foreground: #0F1729;
+  --sidebar-border: #1A2332;
+  --sidebar-ring: #2563EB;
+}
+
+/* Additional utility classes for ThreatIQ */
+.glass-effect {
+  background: rgba(26, 35, 50, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glow-primary {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #22D3EE 0%, #06B6D4 100%);
+}
+
+.gradient-threat {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+}
+
+/* Animated gradient background */
+.animated-gradient {
+  background: linear-gradient(
+    45deg,
+    #2563EB 0%,
+    #3B82F6 25%,
+    #22D3EE 50%,
+    #3B82F6 75%,
+    #2563EB 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Pulse animation for live indicators */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+.pulse-indicator {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
