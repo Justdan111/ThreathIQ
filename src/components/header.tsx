@@ -36,7 +36,7 @@ export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
             <Bell className="w-5 h-5" />
             <span className="absolute top-1 right-1 w-2 h-2 bg-[#E63946] rounded-full"></span>
           </button>
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#2563EB] to-[#22D3EE] flex items-center justify-center font-semibold">
+          <div className="w-10 h-10 rounded-lg bg-linear-to-br from-[#2563EB] to-[#22D3EE] flex items-center justify-center font-semibold">
             SA
           </div>
         </div>

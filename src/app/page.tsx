@@ -212,7 +212,7 @@ export default function LandingPage() {
           >
             <div className="relative">
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-accent/20 blur-3xl opacity-30" />
+              <div className="absolute inset-0 bg-linear-to-tr from-primary/20 to-accent/20 blur-3xl opacity-30" />
               
               {/* Dashboard mockup */}
               <motion.div 
@@ -239,7 +239,7 @@ export default function LandingPage() {
                   </div>
 
                   {/* Map placeholder with incident markers */}
-                  <div className="h-64 rounded-lg bg-gradient-to-br from-primary/5 to-accent/5 border border-border/30 relative overflow-hidden">
+                  <div className="h-64 rounded-lg bg-linear-to-br from-primary/5 to-accent/5 border border-border/30 relative overflow-hidden">
                     {/* Animated dots representing threat reports */}
                     {useMemo(() => [
                       { left: '20%', top: '30%', severity: 'low' },
@@ -352,7 +352,7 @@ export default function LandingPage() {
                     whileHover={{ scale: 1.05, y: -5 }}
                     className="relative group"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
                     <div className="relative p-8 rounded-2xl bg-card border border-border/50 backdrop-blur-xl">
                       <stat.icon className={`w-10 h-10 ${stat.color} mb-4`} />
                       <div className="text-4xl md:text-5xl font-bold text-foreground mb-2">
@@ -388,7 +388,7 @@ export default function LandingPage() {
               <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Four Steps to Safer Communities
               </motion.h2>
-              <motion.div variants={fadeInUp} className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto" />
+              <motion.div variants={fadeInUp} className="w-24 h-1 bg-linear-to-r from-primary to-accent mx-auto" />
             </motion.div>
 
             <motion.div
@@ -399,7 +399,7 @@ export default function LandingPage() {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
             >
               {/* Connection line */}
-              <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary opacity-20" />
+              <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-linear-to-r from-primary via-accent to-primary opacity-20" />
 
               {[
                 {
@@ -438,7 +438,7 @@ export default function LandingPage() {
                 >
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="relative z-10 w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/20"
+                    className="relative z-10 w-20 h-20 rounded-2xl bg-linear-to-br from-primary to-accent flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/20"
                   >
                     <step.icon className="w-10 h-10 text-white" />
                   </motion.div>
@@ -539,11 +539,11 @@ export default function LandingPage() {
                   whileHover={{ y: -10 }}
                   className="relative group"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity rounded-2xl blur-xl"
+                  <div className="absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-10 transition-opacity rounded-2xl blur-xl"
                     style={{ background: `linear-gradient(135deg, ${feature.color.split(' ')[0].replace('from-', '')}, ${feature.color.split(' ')[1].replace('to-', '')})` }}
                   />
                   <div className="relative h-full p-8 rounded-2xl bg-card border border-border/50 backdrop-blur-xl hover:border-primary/50 transition-colors">
-                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6`}>
+                    <div className={`w-14 h-14 rounded-xl bg-linear-to-br ${feature.color} flex items-center justify-center mb-6`}>
                       <feature.icon className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-3">
@@ -621,7 +621,7 @@ export default function LandingPage() {
           >
             <motion.div 
               variants={scaleIn}
-              className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-accent p-12 md:p-16 text-center"
+              className="relative overflow-hidden rounded-3xl bg-linear-to-br from-primary via-primary to-accent p-12 md:p-16 text-center"
             >
               {/* Animated background pattern */}
               {/* Precompute random positions for animated circles */}

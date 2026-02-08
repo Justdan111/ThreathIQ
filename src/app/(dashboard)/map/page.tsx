@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { AlertTriangle, MapPin, Zap, TrendingUp } from 'lucide-react';
+import { MapPin, TrendingUp } from 'lucide-react';
 
 const THREAT_HOTSPOTS = [
   {
@@ -109,7 +109,7 @@ export default function MapPage() {
       <div className="glass-card p-6">
         <h2 className="text-lg font-semibold text-[#F9FAFB] mb-4">Regional Threat Heatmap - Africa</h2>
 
-        <div className="relative w-full h-96 bg-gradient-to-br from-[#0B1F3A] to-[#1A2332] rounded-lg border border-[#2D3A4F] overflow-hidden">
+        <div className="relative w-full h-96 bg-linear-to-br from-[#0B1F3A] to-[#1A2332] rounded-lg border border-[#2D3A4F] overflow-hidden">
           {/* Placeholder Map */}
           <div className="w-full h-full flex items-center justify-center text-[#4B5563]">
             <div className="text-center">
@@ -224,7 +224,7 @@ export default function MapPage() {
                 <h3 className="font-semibold text-[#F9FAFB] mb-2">{stat.region}</h3>
                 <div className="w-full bg-[#0F172A] rounded-full h-2">
                   <div
-                    className="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full"
+                    className="bg-linear-to-r from-blue-500 to-cyan-400 h-2 rounded-full"
                     style={{ width: `${(stat.threats / 160) * 100}%` }}
                   ></div>
                 </div>
