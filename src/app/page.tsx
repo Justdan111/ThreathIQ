@@ -54,12 +54,14 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
 export default function LandingPage() {
   // Precompute random positions for animated circles (for CTA section)
   const animatedCircles = useMemo(() => {
-    return Array.from({ length: 20 }, () => ({
+    // Precompute random values only once for purity
+    const randomValues = Array.from({ length: 20 }, () => ({
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
       duration: 3 + Math.random() * 2,
       delay: Math.random() * 2,
     }));
+    return randomValues;
   }, []);
 
   // Precompute marker data for dashboard preview map
