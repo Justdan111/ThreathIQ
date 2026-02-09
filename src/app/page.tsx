@@ -62,6 +62,22 @@ export default function LandingPage() {
     }));
   }, []);
 
+  // Precompute marker data for dashboard preview map
+  const markerData = useMemo(() => [
+    { left: '20%', top: '30%', severity: 'low' },
+    { left: '60%', top: '20%', severity: 'high' },
+    { left: '45%', top: '60%', severity: 'medium' },
+    { left: '75%', top: '45%', severity: 'low' },
+    { left: '30%', top: '70%', severity: 'critical' },
+    { left: '85%', top: '35%', severity: 'medium' },
+    { left: '15%', top: '50%', severity: 'low' },
+    { left: '55%', top: '80%', severity: 'high' },
+  ].map(marker => ({
+    ...marker,
+    duration: 2 + Math.random() * 2,
+    delay: Math.random() * 2,
+  })), []);
+
   return (
     <div className="min-h-screen bg-background overflow-hidden">
       {/* Animated Background Grid */}
@@ -241,25 +257,13 @@ export default function LandingPage() {
                   {/* Map placeholder with incident markers */}
                   <div className="h-64 rounded-lg bg-linear-to-br from-primary/5 to-accent/5 border border-border/30 relative overflow-hidden">
                     {/* Animated dots representing threat reports */}
-                    {useMemo(() => [
-                      { left: '20%', top: '30%', severity: 'low' },
-                      { left: '60%', top: '20%', severity: 'high' },
-                      { left: '45%', top: '60%', severity: 'medium' },
-                      { left: '75%', top: '45%', severity: 'low' },
-                      { left: '30%', top: '70%', severity: 'critical' },
-                      { left: '85%', top: '35%', severity: 'medium' },
-                      { left: '15%', top: '50%', severity: 'low' },
-                      { left: '55%', top: '80%', severity: 'high' },
-                    ].map((marker, i) => {
+                    {markerData.map((marker, i) => {
                       const colors = {
                         critical: 'bg-red-500',
                         high: 'bg-orange-500',
                         medium: 'bg-yellow-500',
                         low: 'bg-accent'
                       };
-                      // Precompute random duration and delay for each marker
-                      const duration = 2 + Math.random() * 2;
-                      const delay = Math.random() * 2;
                       return (
                         <motion.div
                           key={i}
@@ -273,13 +277,13 @@ export default function LandingPage() {
                             opacity: [0.5, 1, 0.5],
                           }}
                           transition={{
-                            duration,
+                            duration: marker.duration,
                             repeat: Infinity,
-                            delay,
+                            delay: marker.delay,
                           }}
                         />
                       );
-                    }), [])}
+                    })}
                   </div>
 
                   {/* Recent reports */}
