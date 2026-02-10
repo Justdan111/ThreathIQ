@@ -23,7 +23,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex">
       {/* Left Side - Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-[#0B1F3A] to-[#0F172A] flex-col justify-between p-12">
+      <div className="hidden lg:flex lg:w-1/2 bg-linear-to-br from-[#0B1F3A] to-[#0F172A] flex-col justify-between p-12">
         <div className="flex items-center gap-3">
           <Shield className="w-10 h-10 text-[#2563EB]" />
           <span className="text-2xl font-bold text-[#F9FAFB]">ThreatIQ</span>
@@ -44,7 +44,7 @@ export default function LoginPage() {
               { num: '99.9%', label: 'Verified by Experts' }
             ].map((stat, idx) => (
               <div key={idx} className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-[#2563EB]/20 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-[#2563EB]/20 flex items-center justify-center shrink-0">
                   <span className="text-[#2563EB] font-bold">{stat.num[0]}</span>
                 </div>
                 <div>
@@ -142,7 +142,7 @@ export default function LoginPage() {
           {/* Security Notice */}
           <div className="mt-8 p-4 bg-[#1A2332]/50 border border-[#2D3A4F] rounded-lg">
             <div className="flex gap-3">
-              <Shield className="w-5 h-5 text-[#10B981] flex-shrink-0 mt-0.5" />
+              <Shield className="w-5 h-5 text-[#10B981] shrink-0 mt-0.5" />
               <div className="text-xs text-[#9CA3AF]">
                 Your credentials are encrypted and verified by our real-time AI modules.
               </div>
