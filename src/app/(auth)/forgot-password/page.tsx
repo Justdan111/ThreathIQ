@@ -20,7 +20,7 @@ export default function ForgotPasswordPage() {
   return (
     <div className="min-h-screen flex">
       {/* Left Side */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-[#0B1F3A] to-[#0F172A] flex-col justify-center p-12">
+      <div className="hidden lg:flex lg:w-1/2 bg-linear-to-br from-[#0B1F3A] to-[#0F172A] flex-col justify-center p-12">
         <Link href="/" className="flex items-center gap-3 mb-12">
           <Shield className="w-10 h-10 text-[#2563EB]" />
           <span className="text-2xl font-bold text-[#F9FAFB]">ThreatIQ</span>
@@ -31,7 +31,7 @@ export default function ForgotPasswordPage() {
             Secure Password Recovery
           </h2>
           <p className="text-lg text-[#9CA3AF]">
-            We'll send you instructions to reset your password securely. Your account remains protected throughout the process.
+            We&apos;ll send you instructions to reset your password securely. Your account remains protected throughout the process.
           </p>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function ForgotPasswordPage() {
             <>
               <div className="mb-8">
                 <h1 className="text-3xl font-bold text-[#F9FAFB] mb-2">Forgot Password?</h1>
-                <p className="text-[#9CA3AF]">No problem. Tell us your email and we'll send recovery instructions.</p>
+                <p className="text-[#9CA3AF]">No problem. Tell us your email and we&apos;ll send recovery instructions.</p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -79,12 +79,12 @@ export default function ForgotPasswordPage() {
 
               <h2 className="text-2xl font-bold text-[#F9FAFB] mb-2">Check Your Email</h2>
               <p className="text-[#9CA3AF] mb-6">
-                We've sent a password recovery link to <strong>{email}</strong>
+                We&apos;ve sent a password recovery link to <strong>{email}</strong>
               </p>
 
               <div className="p-4 rounded-lg bg-[#1A2332] border border-[#2D3A4F] mb-6">
                 <p className="text-sm text-[#9CA3AF]">
-                  The link expires in 1 hour. If you don't receive it, check your spam folder or try again.
+                  The link expires in 1 hour. If you don&apos;t receive it, check your spam folder or try again.
                 </p>
               </div>
 
