@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { AlertTriangle, CheckCircle, Info, Bell, Trash2, Archive } from 'lucide-react';
+import { AlertTriangle, CheckCircle, Info, Bell, Trash2 } from 'lucide-react';
 
 const NOTIFICATIONS = [
   {
