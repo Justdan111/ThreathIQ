@@ -203,7 +203,7 @@ export default function NotificationsPage() {
 
                   {/* Unread Indicator */}
                   {!notification.read && (
-                    <div className="w-3 h-3 rounded-full bg-[#2563EB] flex-shrink-0 mt-1"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#2563EB] shrink-0 mt-1"></div>
                   )}
                 </div>
               </div>
