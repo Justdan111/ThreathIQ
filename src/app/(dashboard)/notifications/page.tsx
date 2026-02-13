@@ -167,7 +167,7 @@ export default function NotificationsPage() {
               >
                 <div className="flex items-start gap-4">
                   {/* Icon */}
-                  <div className={`p-3 rounded-lg ${colors.bg} flex-shrink-0`}>
+                  <div className={`p-3 rounded-lg ${colors.bg} shrink-0`}>
                     <notification.icon className={`w-6 h-6 ${colors.icon}`} />
                   </div>
 
@@ -189,7 +189,7 @@ export default function NotificationsPage() {
                       </div>
 
                       {/* Actions */}
-                      <div className="flex gap-2 flex-shrink-0">
+                      <div className="flex gap-2 shrink-0">
                         <button
                           onClick={() => deleteNotification(notification.id)}
                           className="p-2 hover:bg-[#1A2332] rounded-lg transition text-[#9CA3AF] hover:text-[#E63946]"
