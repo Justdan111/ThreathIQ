@@ -69,7 +69,7 @@ export default function Sidebar({
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="flex items-center gap-3 px-6 py-6 border-b border-[#2D3A4F]">
-            <Shield className="w-8 h-8 text-[#2563EB] flex-shrink-0" />
+            <Shield className="w-8 h-8 text-[#2563EB] shrink-0" />
             {!isCollapsed && <span className="text-xl font-bold">ThreatIQ</span>}
           </div>
 
@@ -110,7 +110,7 @@ export default function Sidebar({
                   } ${isCollapsed ? 'justify-center' : ''}`}
                   title={isCollapsed ? item.label : ''}
                 >
-                  <item.icon className="w-5 h-5 flex-shrink-0" />
+                  <item.icon className="w-5 h-5 shrink-0" />
                   {!isCollapsed && <span className="text-sm font-medium">{item.label}</span>}
                 </Link>
               ))}
@@ -137,7 +137,7 @@ export default function Sidebar({
                     } ${isCollapsed ? 'justify-center' : ''}`}
                     title={isCollapsed ? item.label : ''}
                   >
-                    <item.icon className="w-5 h-5 flex-shrink-0" />
+                    <item.icon className="w-5 h-5 shrink-0" />
                     {!isCollapsed && <span className="text-sm font-medium">{item.label}</span>}
                   </Link>
                 ))}
