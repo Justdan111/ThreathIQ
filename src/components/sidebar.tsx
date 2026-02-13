@@ -157,7 +157,7 @@ export default function Sidebar({
                 }`}
                 title={isCollapsed ? item.label : ''}
               >
-                <item.icon className="w-5 h-5 flex-shrink-0" />
+                <item.icon className="w-5 h-5 shrink-0" />
                 {!isCollapsed && <span className="text-sm font-medium">{item.label}</span>}
               </Link>
             ))}
@@ -171,7 +171,7 @@ export default function Sidebar({
               }`}
               title={isCollapsed ? 'Logout' : ''}
             >
-              <LogOut className="w-5 h-5 flex-shrink-0" />
+              <LogOut className="w-5 h-5 shrink-0" />
               {!isCollapsed && <span className="text-sm font-medium">Logout</span>}
             </button>
           </div>
