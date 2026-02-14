@@ -31,17 +31,17 @@ export default function LoginPage() {
 
         <div>
           <h2 className="text-5xl font-bold text-[#F9FAFB] mb-6">
-            Secure Access to Real-time Intelligence
+            Stay Informed. Stay Safe. Protect Your Community.
           </h2>
           <p className="text-lg text-[#9CA3AF] mb-8 leading-relaxed">
-            Join the global community-driven security intelligence platform. Monitor, analyze, and defend against emerging threats in real time.
+            Access your ThreatIQ dashboard to monitor real-time threat reports, view incidents on the live map, and collaborate with your community to keep your neighborhood secure.
           </p>
 
           <div className="space-y-6">
             {[
-              { num: '50,000+', label: 'Active Security Nodes' },
-              { num: '1.2M+', label: 'Threats Neutralized' },
-              { num: '99.9%', label: 'Verified by Experts' }
+              { num: '50,000+', label: 'Community Members' },
+              { num: '1.2M+', label: 'Threats Reported & Resolved' },
+              { num: '99.9%', label: 'Uptime & Reliability' }
             ].map((stat, idx) => (
               <div key={idx} className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-lg bg-[#2563EB]/20 flex items-center justify-center shrink-0">
@@ -62,7 +62,7 @@ export default function LoginPage() {
         <div className="w-full max-w-md">
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-[#F9FAFB] mb-2">Welcome Back</h1>
-            <p className="text-[#9CA3AF]">Please enter your credentials to access your dashboard</p>
+            <p className="text-[#9CA3AF]">Sign in to monitor threats and protect your community</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -144,7 +144,7 @@ export default function LoginPage() {
             <div className="flex gap-3">
               <Shield className="w-5 h-5 text-[#10B981] shrink-0 mt-0.5" />
               <div className="text-xs text-[#9CA3AF]">
-                Your credentials are encrypted and verified by our real-time AI modules.
+                Your connection is secured with end-to-end encryption. All threat data is verified by community moderators.
               </div>
             </div>
           </div>
