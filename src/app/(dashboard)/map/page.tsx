@@ -9,49 +9,49 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { MapPin, TrendingUp } from 'lucide-react';
+import { AlertTriangle, MapPin, Zap, TrendingUp } from 'lucide-react';
 
 const THREAT_HOTSPOTS = [
   {
     id: 1,
-    name: 'Financial District - Lagos',
-    threats: 45,
+    name: 'Downtown - Main St Intersection',
+    incidents: 12,
     severity: 'CRITICAL',
-    description: 'Advanced persistent threat detected',
+    description: 'Major traffic accident - 3 vehicles involved',
     coordinates: { x: '35%', y: '62%' }
   },
   {
     id: 2,
-    name: 'Tech Hub - Nairobi',
-    threats: 28,
+    name: 'Central Park Area',
+    incidents: 8,
     severity: 'HIGH',
-    description: 'Phishing campaigns targeting developers',
+    description: 'Suspicious activity reported near playground',
     coordinates: { x: '58%', y: '55%' }
   },
   {
     id: 3,
-    name: 'Johannesburg Data Center',
-    threats: 18,
+    name: 'Oak Street',
+    incidents: 4,
     severity: 'MEDIUM',
-    description: 'DDoS attack from multiple nodes',
+    description: 'Road closure due to utility work',
     coordinates: { x: '55%', y: '78%' }
   },
   {
     id: 4,
-    name: 'Cairo Financial Hub',
-    threats: 12,
+    name: 'Riverside Shopping Area',
+    incidents: 3,
     severity: 'MEDIUM',
-    description: 'Malware distribution network',
+    description: 'Increased police presence',
     coordinates: { x: '62%', y: '35%' }
   },
 ];
 
 const REGIONAL_STATS = [
-  { region: 'West Africa', threats: 156, trend: '+12%' },
-  { region: 'East Africa', threats: 118, trend: '+5%' },
-  { region: 'South Africa', threats: 89, trend: '-3%' },
-  { region: 'North Africa', threats: 67, trend: '+8%' },
-  { region: 'Central Africa', threats: 42, trend: '+2%' },
+  { region: 'Downtown', incidents: 28, trend: '+12%' },
+  { region: 'Midtown', incidents: 18, trend: '+5%' },
+  { region: 'Uptown', incidents: 14, trend: '-3%' },
+  { region: 'Suburbs', incidents: 12, trend: '+8%' },
+  { region: 'Outskirts', incidents: 8, trend: '+2%' },
 ];
 
 const getSeverityColor = (severity: string) => {
@@ -73,7 +73,7 @@ export default function MapPage() {
       {/* Header */}
       <div>
         <h1 className="text-4xl font-bold text-[#F9FAFB]">Map Intelligence</h1>
-        <p className="text-[#9CA3AF] mt-2">Real-time threat heatmap and regional risk analysis</p>
+        <p className="text-[#9CA3AF] mt-2">Real-time incident heatmap and geographic risk visualization</p>
       </div>
 
       {/* Controls */}
@@ -109,7 +109,7 @@ export default function MapPage() {
       <div className="glass-card p-6">
         <h2 className="text-lg font-semibold text-[#F9FAFB] mb-4">Regional Threat Heatmap - Africa</h2>
 
-        <div className="relative w-full h-96 bg-linear-to-br from-[#0B1F3A] to-[#1A2332] rounded-lg border border-[#2D3A4F] overflow-hidden">
+        <div className="relative w-full h-96 bg-gradient-to-br from-[#0B1F3A] to-[#1A2332] rounded-lg border border-[#2D3A4F] overflow-hidden">
           {/* Placeholder Map */}
           <div className="w-full h-full flex items-center justify-center text-[#4B5563]">
             <div className="text-center">
@@ -224,7 +224,7 @@ export default function MapPage() {
                 <h3 className="font-semibold text-[#F9FAFB] mb-2">{stat.region}</h3>
                 <div className="w-full bg-[#0F172A] rounded-full h-2">
                   <div
-                    className="bg-linear-to-r from-blue-500 to-cyan-400 h-2 rounded-full"
+                    className="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full"
                     style={{ width: `${(stat.threats / 160) * 100}%` }}
                   ></div>
                 </div>
