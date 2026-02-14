@@ -190,7 +190,7 @@ export default function MapPage() {
               <div className="grid grid-cols-3 gap-4 p-4 rounded-lg bg-[#1A2332]/50">
                 <div>
                   <p className="text-[#9CA3AF] text-xs mb-1">Active Threats</p>
-                  <p className="text-2xl font-bold text-[#F9FAFB]">{hotspot.threats}</p>
+                  <p className="text-2xl font-bold text-[#F9FAFB]">{hotspot.incidents}</p>
                 </div>
                 <div>
                   <p className="text-[#9CA3AF] text-xs mb-1">Response Time</p>
@@ -225,13 +225,13 @@ export default function MapPage() {
                 <div className="w-full bg-[#0F172A] rounded-full h-2">
                   <div
                     className="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full"
-                    style={{ width: `${(stat.threats / 160) * 100}%` }}
+                    style={{ width: `${(stat.incidents / 160) * 100}%` }}
                   ></div>
                 </div>
               </div>
 
               <div className="ml-6 text-right">
-                <div className="text-xl font-bold text-[#F9FAFB]">{stat.threats}</div>
+                <div className="text-xl font-bold text-[#F9FAFB]">{stat.incidents}</div>
                 <div className="flex items-center gap-1 text-xs text-green-400">
                   <TrendingUp className="w-3 h-3" />
                   <span>{stat.trend}</span>
