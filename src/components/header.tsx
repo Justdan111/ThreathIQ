@@ -26,7 +26,7 @@ export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
         <div className="flex-1 px-4 hidden md:block">
           <input
             type="text"
-            placeholder="Search threats, IPs, hashes..."
+            placeholder="Search incidents, locations, or reporters..."
             className="w-full max-w-md px-4 py-2 rounded-lg bg-[#1A2332] border border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563] focus:outline-none focus:border-[#2563EB]"
           />
         </div>

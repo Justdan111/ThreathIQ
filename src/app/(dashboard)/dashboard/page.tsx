@@ -60,8 +60,8 @@ const LIVE_FEED_INCIDENTS = [
   {
     id: '#INC-89422',
     severity: 'CRITICAL',
-    title: 'Traffic Accident - Downtown',
-    description: 'Multi-vehicle collision at Main St intersection. Emergency services on scene.',
+    title: 'Traffic Accident - Abuja',
+    description: 'Multi-vehicle collision on Ahmadu Bello Way near Wuse Market. Emergency services on scene.',
     time: '2m ago',
     color: 'text-red-400',
     badgeBg: 'bg-red-500/20',
@@ -69,8 +69,8 @@ const LIVE_FEED_INCIDENTS = [
   {
     id: '#INC-89419',
     severity: 'HIGH',
-    title: 'Suspicious Activity - Park Area',
-    description: 'Reports of suspicious individuals in Central Park near playground.',
+    title: 'Suspicious Activity - Lagos',
+    description: 'Reports of suspicious individuals near Lekki Phase 1 waterfront. Community advised to stay alert.',
     time: '12m ago',
     color: 'text-orange-400',
     badgeBg: 'bg-orange-500/20',
@@ -78,8 +78,8 @@ const LIVE_FEED_INCIDENTS = [
   {
     id: '#INC-89415',
     severity: 'MEDIUM',
-    title: 'Road Closure - Oak Street',
-    description: 'Utility work closure between 3rd and 4th Ave. Use alternate routes.',
+    title: 'Road Closure - Port Harcourt',
+    description: 'Bridge maintenance on Old Aba Road causing local delays. Use alternate routes.',
     time: '45m ago',
     color: 'text-yellow-400',
     badgeBg: 'bg-yellow-500/20',
@@ -87,8 +87,8 @@ const LIVE_FEED_INCIDENTS = [
   {
     id: '#INC-89412',
     severity: 'MEDIUM',
-    title: 'Air Quality Alert',
-    description: 'Elevated air quality index in downtown area. Sensitive groups should avoid outdoor activities.',
+    title: 'Air Quality Alert - Kano',
+    description: 'Elevated particulate levels in Kano due to dust storms. Sensitive groups advised to stay indoors.',
     time: '1h ago',
     color: 'text-yellow-400',
     badgeBg: 'bg-yellow-500/20',
@@ -99,16 +99,8 @@ export default function DashboardPage() {
   return (
     <div className="space-y-6 pb-12">
       {/* Header with Search and Status */}
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div className="w-full md:w-96">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#4B5563]" />
-            <Input
-              placeholder="Search incidents, locations, or reporters..."
-              className="pl-10 bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563]"
-            />
-          </div>
-        </div>
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-end gap-4">
+        
 
         <div className="flex items-center gap-3">
           <button className="p-2 rounded-lg border border-[#2D3A4F] hover:bg-[#1A2332] transition">
@@ -125,11 +117,11 @@ export default function DashboardPage() {
       </div>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
         {KPI_DATA.map((kpi, idx) => {
           const Icon = kpi.icon;
           return (
-            <div key={idx} className="glass-card p-6 flex flex-col justify-between hover:border-[#3D4A5F] transition">
+            <div key={idx} className="glass-card p-6 flex flex-col justify-between hover:border-[#3D4A5F] transition shadow-lg border border-[#2D3A4F] rounded-lg p-4">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm font-medium text-[#9CA3AF]">{kpi.label}</span>
@@ -166,7 +158,7 @@ export default function DashboardPage() {
               <div className="flex items-center gap-3">
                 <MapPin className="w-6 h-6 text-blue-400" />
                 <div>
-                  <h2 className="text-lg font-semibold text-[#F9FAFB]">Regional Incident Heatmap - San Francisco</h2>
+                  <h2 className="text-lg font-semibold text-[#F9FAFB]">Regional Incident Heatmap - Nigeria</h2>
                   <p className="text-xs text-[#9CA3AF] mt-1">Real-time community incident distribution</p>
                 </div>
               </div>
@@ -185,26 +177,26 @@ export default function DashboardPage() {
             {/* Map Placeholder */}
             <div className="relative h-96 bg-[#0F172A] overflow-hidden">
               {/* Simple Map Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1A2332] to-[#0F172A]">
-                {/* Map indicators */}
-                <div className="absolute top-1/4 left-1/3 w-3 h-3 rounded-full bg-red-500 shadow-lg animate-pulse" title="Critical - Downtown Accident"></div>
-                <div className="absolute top-2/3 left-2/3 w-2 h-2 rounded-full bg-orange-400 shadow-lg" title="High Risk Area"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-2 h-2 rounded-full bg-yellow-400 shadow-lg" title="Medium Priority"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1A2332] to-[#0F172A]">
+                {/* Map indicators (Nigeria) */}
+                <div className="absolute top-1/4 left-1/3 w-3 h-3 rounded-full bg-red-500 shadow-lg animate-pulse" title="Critical - Abuja Accident"></div>
+                <div className="absolute top-2/3 left-2/3 w-2 h-2 rounded-full bg-orange-400 shadow-lg" title="High Risk - Lagos"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-2 h-2 rounded-full bg-yellow-400 shadow-lg" title="Area Alert - Port Harcourt"></div>
                 
                 {/* Legend */}
                 <div className="absolute bottom-4 right-4 glass-card p-4">
                   <div className="space-y-2 text-xs">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-red-500"></div>
-                      <span className="text-[#F9FAFB]">Critical Zone</span>
+                      <span className="text-[#F9FAFB]">Critical Zone (e.g., Abuja)</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                      <span className="text-[#F9FAFB]">High Risk Area</span>
+                      <span className="text-[#F9FAFB]">High Risk Area (e.g., Lagos)</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-                      <span className="text-[#F9FAFB]">Area Alert</span>
+                      <span className="text-[#F9FAFB]">Area Alert (e.g., Port Harcourt)</span>
                     </div>
                   </div>
                 </div>
@@ -216,8 +208,8 @@ export default function DashboardPage() {
               <div className="flex items-start gap-3">
                 <AlertTriangle className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <h4 className="text-sm font-semibold text-red-400">ALERT: ACCIDENT - DOWNTOWN</h4>
-                  <p className="text-xs text-[#9CA3AF] mt-1">Multi-vehicle collision detected at Main Street & 5th Avenue. Emergency response in progress.</p>
+                  <h4 className="text-sm font-semibold text-red-400">ALERT: ACCIDENT - ABUJA</h4>
+                  <p className="text-xs text-[#9CA3AF] mt-1">Multi-vehicle collision detected at Ahmadu Bello Way & Independence Avenue, Abuja. Emergency response in progress.</p>
                 </div>
               </div>
             </div>
