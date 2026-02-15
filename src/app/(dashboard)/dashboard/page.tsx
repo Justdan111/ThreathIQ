@@ -175,7 +175,7 @@ export default function DashboardPage() {
             {/* Map Placeholder */}
             <div className="relative h-96 bg-[#0F172A] overflow-hidden">
               {/* Simple Map Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#1A2332] to-[#0F172A]">
+                <div className="absolute inset-0 bg-linear-to-br from-[#1A2332] to-[#0F172A]">
                 {/* Map indicators (Nigeria) */}
                 <div className="absolute top-1/4 left-1/3 w-3 h-3 rounded-full bg-red-500 shadow-lg animate-pulse" title="Critical - Abuja Accident"></div>
                 <div className="absolute top-2/3 left-2/3 w-2 h-2 rounded-full bg-orange-400 shadow-lg" title="High Risk - Lagos"></div>
