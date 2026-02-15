@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { AlertTriangle, MapPin, Zap, TrendingUp } from 'lucide-react';
+import { MapPin, TrendingUp } from 'lucide-react';
 
 const THREAT_HOTSPOTS = [
   {
