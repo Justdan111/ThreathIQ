@@ -8,10 +8,8 @@ import {
   TrendingDown,
   Bell,
   HelpCircle,
-  Search,
   RotateCcw,
 } from 'lucide-react';
-import { Input } from '@/components/ui/input';
 
 const KPI_DATA = [
   {
@@ -121,7 +119,7 @@ export default function DashboardPage() {
         {KPI_DATA.map((kpi, idx) => {
           const Icon = kpi.icon;
           return (
-            <div key={idx} className="glass-card p-6 flex flex-col justify-between hover:border-[#3D4A5F] transition shadow-lg border border-[#2D3A4F] rounded-lg p-4">
+            <div key={idx} className="glass-card p-6 flex flex-col justify-between hover:border-[#3D4A5F] transition shadow-lg border border-[#2D3A4F] rounded-lg">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm font-medium text-[#9CA3AF]">{kpi.label}</span>
@@ -206,7 +204,7 @@ export default function DashboardPage() {
             {/* Map Info Alert */}
             <div className="p-4 border-t border-[#2D3A4F] bg-red-500/10 border-l-4 border-l-red-500">
               <div className="flex items-start gap-3">
-                <AlertTriangle className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
+                <AlertTriangle className="w-5 h-5 text-red-400 mt-0.5 shrink-0" />
                 <div>
                   <h4 className="text-sm font-semibold text-red-400">ALERT: ACCIDENT - ABUJA</h4>
                   <p className="text-xs text-[#9CA3AF] mt-1">Multi-vehicle collision detected at Ahmadu Bello Way & Independence Avenue, Abuja. Emergency response in progress.</p>
@@ -217,7 +215,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Live Feed Sidebar */}
-        <div className="glass-card p-6 flex flex-col h-fit max-h-[600px] overflow-hidden">
+        <div className="glass-card p-6 flex flex-col h-fit max-h-150 overflow-hidden">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
               <h3 className="text-lg font-semibold text-[#F9FAFB]">Live Incident Feed</h3>
