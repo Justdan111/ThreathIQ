@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Search, Grid, List, Filter } from 'lucide-react';
+import { Search, Grid, List } from 'lucide-react';
 
 const THREATS = [
   {
