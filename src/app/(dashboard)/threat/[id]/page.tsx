@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { AlertTriangle, Share2, CheckCircle, Flag, MapPin, Clock, Users } from 'lucide-react';
+import { AlertTriangle, Share2, CheckCircle, Flag, Users } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const ACTIVITY_DATA = [
