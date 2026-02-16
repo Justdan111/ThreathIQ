@@ -19,35 +19,35 @@ import { Download, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const THREAT_TRENDS = [
-  { date: 'Jan 1', threats: 120, verified: 108, resolved: 95 },
-  { date: 'Jan 8', threats: 145, verified: 128, resolved: 110 },
-  { date: 'Jan 15', threats: 162, verified: 145, resolved: 128 },
-  { date: 'Jan 22', threats: 178, verified: 158, resolved: 142 },
-  { date: 'Jan 29', threats: 195, verified: 172, resolved: 155 },
-  { date: 'Feb 5', threats: 218, verified: 192, resolved: 172 },
-  { date: 'Feb 12', threats: 245, verified: 215, resolved: 195 },
+  { date: 'Jan 1', incidents: 24, verified: 22, resolved: 19 },
+  { date: 'Jan 8', incidents: 32, verified: 28, resolved: 24 },
+  { date: 'Jan 15', incidents: 41, verified: 37, resolved: 32 },
+  { date: 'Jan 22', incidents: 48, verified: 43, resolved: 38 },
+  { date: 'Jan 29', incidents: 55, verified: 49, resolved: 42 },
+  { date: 'Feb 5', incidents: 62, verified: 56, resolved: 48 },
+  { date: 'Feb 12', incidents: 71, verified: 64, resolved: 55 },
 ];
 
 const THREAT_BY_REGION = [
-  { region: 'West Africa', threats: 340, resolved: 310 },
-  { region: 'East Africa', threats: 280, resolved: 250 },
-  { region: 'South Africa', threats: 220, resolved: 205 },
-  { region: 'North Africa', threats: 180, resolved: 165 },
-  { region: 'Central Africa', threats: 95, resolved: 85 },
+  { region: 'Downtown', incidents: 45, resolved: 38 },
+  { region: 'Midtown', incidents: 38, resolved: 32 },
+  { region: 'Uptown', incidents: 31, resolved: 26 },
+  { region: 'Suburbs', incidents: 28, resolved: 24 },
+  { region: 'Outskirts', incidents: 15, resolved: 12 },
 ];
 
 const THREAT_TYPES = [
-  { name: 'Malware', value: 42, color: '#E63946' },
-  { name: 'Phishing', value: 28, color: '#F59E0B' },
-  { name: 'Credentials', value: 18, color: '#2563EB' },
-  { name: 'DDoS', value: 12, color: '#22D3EE' },
+  { name: 'Accidents', value: 35, color: '#E63946' },
+  { name: 'Suspicious Activity', value: 28, color: '#F59E0B' },
+  { name: 'Crime Reports', value: 22, color: '#2563EB' },
+  { name: 'Hazards', value: 15, color: '#22D3EE' },
 ];
 
 const RESPONSE_TIMES = [
-  { severity: 'Critical', avgTime: '12m', p95: '45m', p99: '2h' },
-  { severity: 'High', avgTime: '45m', p95: '2h', p99: '8h' },
-  { severity: 'Medium', avgTime: '4h', p95: '12h', p99: '24h' },
-  { severity: 'Low', avgTime: '24h', p95: '48h', p99: '72h' },
+  { severity: 'Critical', avgTime: '8m', p95: '25m', p99: '1h' },
+  { severity: 'High', avgTime: '25m', p95: '1h', p99: '4h' },
+  { severity: 'Medium', avgTime: '2h', p95: '6h', p99: '12h' },
+  { severity: 'Low', avgTime: '12h', p95: '24h', p99: '48h' },
 ];
 
 const COMMUNITY_STATS = [
@@ -64,7 +64,7 @@ export default function AnalyticsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-4xl font-bold text-[#F9FAFB]">Analytics & Insights</h1>
-          <p className="text-[#9CA3AF] mt-2">Platform-wide threat intelligence and community metrics</p>
+          <p className="text-[#9CA3AF] mt-2">Community safety trends and regional incident analysis</p>
         </div>
         <Button className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white flex items-center gap-2">
           <Download className="w-4 h-4" />
@@ -86,11 +86,11 @@ export default function AnalyticsPage() {
         ))}
       </div>
 
-      {/* Threat Trends */}
+      {/* Incident Trends */}
       <div className="glass-card p-6">
         <div className="mb-6">
-          <h2 className="text-xl font-semibold text-[#F9FAFB] mb-2">Threat Trends Over Time</h2>
-          <p className="text-[#9CA3AF] text-sm">Last 42 days - Total, Verified, and Resolved threats</p>
+          <h2 className="text-xl font-semibold text-[#F9FAFB] mb-2">Incident Trends Over Time</h2>
+          <p className="text-[#9CA3AF] text-sm">Last 42 days - Total, Verified, and Resolved incidents</p>
         </div>
         <ResponsiveContainer width="100%" height={400}>
           <LineChart data={THREAT_TRENDS}>
@@ -107,7 +107,7 @@ export default function AnalyticsPage() {
             <Legend />
             <Line
               type="monotone"
-              dataKey="threats"
+              dataKey="incidents"
               stroke="#E63946"
               strokeWidth={2}
               dot={{ fill: '#E63946', r: 4 }}
@@ -134,7 +134,7 @@ export default function AnalyticsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Regional Heatmap */}
         <div className="glass-card p-6">
-          <h2 className="text-xl font-semibold text-[#F9FAFB] mb-6">Threats by Region</h2>
+          <h2 className="text-xl font-semibold text-[#F9FAFB] mb-6">Incidents by Area</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={THREAT_BY_REGION}>
               <CartesianGrid strokeDasharray="3 3" stroke="#2D3A4F" />
@@ -148,15 +148,15 @@ export default function AnalyticsPage() {
                 }}
               />
               <Legend />
-              <Bar dataKey="threats" fill="#E63946" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="incidents" fill="#E63946" radius={[8, 8, 0, 0]} />
               <Bar dataKey="resolved" fill="#10B981" radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
 
-        {/* Threat Type Distribution */}
+        {/* Incident Type Distribution */}
         <div className="glass-card p-6">
-          <h2 className="text-xl font-semibold text-[#F9FAFB] mb-6">Threat Distribution</h2>
+          <h2 className="text-xl font-semibold text-[#F9FAFB] mb-6">Incident Type Distribution</h2>
           <ResponsiveContainer width="100%" height={300}>
             <PieChart>
               <Pie
