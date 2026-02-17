@@ -157,7 +157,7 @@ export default function ReportIncidentPage() {
             />
           </div>
 
-          <div className="h-48 bg-gradient-to-br from-[#1A2332] to-[#0F172A] rounded-lg border border-[#2D3A4F] flex items-center justify-center">
+          <div className="h-48 bg-linear-to-br from-[#1A2332] to-[#0F172A] rounded-lg border border-[#2D3A4F] flex items-center justify-center">
             <div className="text-center">
               <MapPin className="w-8 h-8 text-[#2563EB] mx-auto mb-2" />
               <p className="text-[#9CA3AF]">Interactive map will load here</p>
@@ -242,7 +242,7 @@ export default function ReportIncidentPage() {
 
         {/* Security Notice */}
         <div className="glass-card p-6 border-l-4 border-green-500 flex gap-4">
-          <Shield className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+          <Shield className="w-6 h-6 text-green-400 shrink-0 mt-1" />
           <div>
             <p className="font-semibold text-[#F9FAFB] mb-1">End-to-end encrypted</p>
             <p className="text-sm text-[#9CA3AF]">
