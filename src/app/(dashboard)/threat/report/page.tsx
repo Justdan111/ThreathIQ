@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { MapPin, Upload, Shield, AlertTriangle, CheckCircle } from 'lucide-react';
+import { MapPin, Upload, Shield, CheckCircle } from 'lucide-react';
 
 export default function ReportIncidentPage() {
   const [formData, setFormData] = useState({
@@ -66,11 +66,11 @@ export default function ReportIncidentPage() {
       {/* AI Validation Indicator */}
       <div className="glass-card p-6 border-l-4 border-blue-500">
         <div className="flex items-start gap-4">
-          <Shield className="w-6 h-6 text-[#2563EB] flex-shrink-0 mt-1" />
+          <Shield className="w-6 h-6 text-[#2563EB] shrink-0 mt-1" />
           <div className="flex-1">
             <h3 className="font-semibold text-[#F9FAFB] mb-1">AI VALIDATION CONFIDENCE</h3>
             <div className="w-full bg-[#1A2332] rounded-full h-2 mb-2">
-              <div className="bg-gradient-to-r from-blue-500 to-cyan-400 h-2 rounded-full" style={{ width: '72%' }}></div>
+              <div className="bg-linear-to-r from-blue-500 to-cyan-400 h-2 rounded-full" style={{ width: '72%' }}></div>
             </div>
             <p className="text-sm text-[#9CA3AF]">72% VALID - High semantic detail helps accelerate verification.</p>
           </div>
