@@ -1,37 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ThreatIQ
 
-## Getting Started
+ThreatIQ is a community-driven security intelligence platform that helps communities detect, understand, and respond to security threats in real time. It combines trusted human reporting, location intelligence, and AI-powered risk analysis to transform fragmented information into clear, actionable intelligence.
 
-First, run the development server:
+## Why ThreatIQ
+
+Many communities—especially in regions where formal reporting systems are limited—receive security information through informal channels (messaging apps, social media, or word of mouth). That information is often late, fragmented, or unverifiable, which leads to slower responses and increased risk.
+
+ThreatIQ creates a central, trusted channel for reporting and verifying incidents so people and responders can act faster and more confidently.
+
+## What ThreatIQ Provides
+
+- Real-time incident reporting and alerts (location-aware)
+- AI-assisted risk scoring and duplicate detection
+- Human verification by community leaders and admins
+- Interactive maps, timelines, and analytics
+- Role-based access and secure reporting
+
+## How It Works
+
+1. Report: Users submit incidents (suspicious activity, theft, violence, infrastructure damage, emergencies) with location, description, severity, and optional media.
+2. Analyze: AI checks for duplicates, assigns a risk score, and surfaces patterns across time and place.
+3. Verify: Trusted community leaders and admins confirm or flag reports to improve accuracy.
+4. Act: Users receive location-based alerts and can view incidents on interactive maps and dashboards.
+
+## Key Features
+
+- Live incident feed and alerts
+- Interactive heatmaps and map intelligence
+- AI risk scoring and pattern detection
+- Community verification workflow
+- Secure, role-based access controls
+- Analytics and historical trend reporting
+- Dark-mode, security-first UI
+
+## Who Should Use ThreatIQ
+
+- Local residents and neighborhood groups
+- Community leaders and NGOs
+- Security teams and emergency responders
+- City planners and analysts
+
+## Technology
+
+- Frontend: Next.js (React)
+- Backend: Golang (APIs)
+- AI: Risk scoring and pattern analysis
+- Maps: Location-based visualization
+- Security: Role-based access, encryption, and audit logs
+
+## Development / Getting Started
+
+Install dependencies and run the dev server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Vision
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ThreatIQ aims to become a reliable digital safety layer for communities—helping people stay informed, enabling faster responses, and providing data-driven insights for safer neighborhoods.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# ThreathIQ
+If you'd like, I can add screenshots, a contributor guide, or deployment notes to this README.
