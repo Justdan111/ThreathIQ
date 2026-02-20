@@ -47,142 +47,194 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-/* ThreatIQ Color Palette */
+/* ─────────────────────────────────────────────
+   ThreatIQ — LIGHT MODE (default)
+   White background, bold blue brand accents
+───────────────────────────────────────────── */
 :root {
-  /* Border radius */
   --radius: 0.75rem;
 
-  /* Main backgrounds */
-  --background: #0F1729;      /* Deep navy blue background */
-  --foreground: #FFFFFF;       /* Pure white text */
+  /* Main surfaces */
+  --background: #FFFFFF;
+  --foreground: #0F172A;
 
-  /* Cards & surfaces with glass effect */
-  --card: #1A2332;             /* Elevated surface */
-  --card-foreground: #F9FAFB;  /* Card text */
-  
-  /* Popover */
+  /* Cards */
+  --card: #F8FAFC;
+  --card-foreground: #0F172A;
+
+  /* Popovers */
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+
+  /* Primary brand — vivid blue */
+  --primary: #2563EB;
+  --primary-foreground: #FFFFFF;
+
+  /* Secondary — cool slate */
+  --secondary: #F1F5F9;
+  --secondary-foreground: #1E293B;
+
+  /* Muted */
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+
+  /* Accent — cyan */
+  --accent: #0891B2;
+  --accent-foreground: #FFFFFF;
+
+  /* Destructive */
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+
+  /* Borders & inputs */
+  --border: #E2E8F0;
+  --input: #F8FAFC;
+  --ring: #2563EB;
+
+  /* Charts */
+  --chart-1: #2563EB;
+  --chart-2: #DC2626;
+  --chart-3: #D97706;
+  --chart-4: #059669;
+  --chart-5: #0891B2;
+
+  /* Sidebar — slightly off-white to distinguish */
+  --sidebar: #F8FAFC;
+  --sidebar-foreground: #1E293B;
+  --sidebar-primary: #2563EB;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #0891B2;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #2563EB;
+
+  /* ThreatIQ status colors */
+  --color-critical: #DC2626;
+  --color-high: #D97706;
+  --color-medium: #F59E0B;
+  --color-low: #0891B2;
+  --color-success: #059669;
+  --color-info: #2563EB;
+  --color-warning: #D97706;
+}
+
+/* ─────────────────────────────────────────────
+   ThreatIQ — DARK MODE
+   Deep navy, neon blue/cyan accents
+───────────────────────────────────────────── */
+.dark {
+  /* Main surfaces */
+  --background: #0F1729;
+  --foreground: #F9FAFB;
+
+  /* Cards */
+  --card: #1A2332;
+  --card-foreground: #F9FAFB;
+
+  /* Popovers */
   --popover: #1A2332;
   --popover-foreground: #F9FAFB;
 
-  /* Primary brand color - Bright Blue */
-  --primary: #2563EB;          /* Main brand blue */
+  /* Primary brand — electric blue */
+  --primary: #3B82F6;
   --primary-foreground: #FFFFFF;
 
   /* Secondary */
-  --secondary: #1E293B;        /* Subtle secondary */
-  --secondary-foreground: #F9FAFB;
-
-  /* Muted elements */
-  --muted: #64748B;            /* Muted backgrounds */
-  --muted-foreground: #94A3B8; /* Muted text */
-
-  /* Accent color - Cyan */
-  --accent: #22D3EE;           /* Bright cyan accent */
-  --accent-foreground: #0F1729;
-
-  /* Success/Verified - Green */
-  --success: #10B981;
-  --success-foreground: #FFFFFF;
-
-  /* Destructive/Critical - Red */
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
-
-  /* Border */
-  --border: #1E293B;           /* Subtle borders */
-  --input: #1A2332;
-  --ring: #2563EB;
-
-  /* Chart colors */
-  --chart-1: #2563EB;          /* Primary blue */
-  --chart-2: #EF4444;          /* Red for critical */
-  --chart-3: #F59E0B;          /* Orange for high */
-  --chart-4: #10B981;          /* Green for success */
-  --chart-5: #22D3EE;          /* Cyan for info */
-
-  /* Sidebar colors */
-  --sidebar: #0B1520;
-  --sidebar-foreground: #F9FAFB;
-  --sidebar-primary: #2563EB;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #22D3EE;
-  --sidebar-accent-foreground: #0F1729;
-  --sidebar-border: #1A2332;
-  --sidebar-ring: #2563EB;
-
-  /* ThreatIQ Specific Status Colors */
-  --color-critical: #EF4444;   /* Critical threats */
-  --color-high: #F59E0B;       /* High priority */
-  --color-medium: #F59E0B;     /* Medium priority */
-  --color-low: #22D3EE;        /* Low priority */
-  --color-success: #10B981;    /* Success states */
-  --color-info: #3B82F6;       /* Information */
-  --color-warning: #F59E0B;    /* Warnings */
-}
-
-.dark {
-  --background: #0F1729;
-  --foreground: #FFFFFF;
-  --card: #1A2332;
-  --card-foreground: #F9FAFB;
-  --popover: #1A2332;
-  --popover-foreground: #F9FAFB;
-  --primary: #2563EB;
-  --primary-foreground: #FFFFFF;
   --secondary: #1E293B;
   --secondary-foreground: #F9FAFB;
-  --muted: #64748B;
+
+  /* Muted */
+  --muted: #1E293B;
   --muted-foreground: #94A3B8;
+
+  /* Accent — bright cyan */
   --accent: #22D3EE;
   --accent-foreground: #0F1729;
+
+  /* Destructive */
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
+
+  /* Borders & inputs */
   --border: #1E293B;
   --input: #1A2332;
-  --ring: #2563EB;
-  --chart-1: #2563EB;
+  --ring: #3B82F6;
+
+  /* Charts */
+  --chart-1: #3B82F6;
   --chart-2: #EF4444;
   --chart-3: #F59E0B;
   --chart-4: #10B981;
   --chart-5: #22D3EE;
+
+  /* Sidebar */
   --sidebar: #0B1520;
   --sidebar-foreground: #F9FAFB;
-  --sidebar-primary: #2563EB;
+  --sidebar-primary: #3B82F6;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #22D3EE;
   --sidebar-accent-foreground: #0F1729;
   --sidebar-border: #1A2332;
-  --sidebar-ring: #2563EB;
+  --sidebar-ring: #3B82F6;
+
+  /* ThreatIQ status colors */
+  --color-critical: #EF4444;
+  --color-high: #F59E0B;
+  --color-medium: #F59E0B;
+  --color-low: #22D3EE;
+  --color-success: #10B981;
+  --color-info: #3B82F6;
+  --color-warning: #F59E0B;
 }
 
-/* Additional utility classes for ThreatIQ */
+/* ─────────────────────────────────────────────
+   Utility classes — mode-aware
+───────────────────────────────────────────── */
+
+/* Glass card: looks great in both modes */
 .glass-effect {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dark .glass-effect {
   background: rgba(26, 35, 50, 0.6);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* Glows — subtle in light, vivid in dark */
 .glow-primary {
-  box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.2);
+}
+
+.dark .glow-primary {
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.4);
 }
 
 .glow-accent {
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  box-shadow: 0 0 16px rgba(8, 145, 178, 0.2);
 }
 
+.dark .glow-accent {
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.4);
+}
+
+/* Gradients */
 .gradient-primary {
   background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
 }
 
 .gradient-accent {
-  background: linear-gradient(135deg, #22D3EE 0%, #06B6D4 100%);
+  background: linear-gradient(135deg, #0891B2 0%, #22D3EE 100%);
 }
 
 .gradient-threat {
-  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
 }
 
-/* Animated gradient background */
+/* Animated gradient — works on both modes */
 .animated-gradient {
   background: linear-gradient(
     45deg,
@@ -197,29 +249,23 @@
 }
 
 @keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
 }
 
-/* Pulse animation for live indicators */
+/* Live pulse indicator */
 @keyframes pulse-glow {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.1);
-  }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.1); }
 }
 
 .pulse-indicator {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+/* ─────────────────────────────────────────────
+   Base layer
+───────────────────────────────────────────── */
 @layer base {
   * {
     @apply border-border outline-ring/50;
