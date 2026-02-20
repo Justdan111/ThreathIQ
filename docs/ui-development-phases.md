@@ -1,67 +1,84 @@
 # ThreatIQ UI Development Phases
 
-This document tracks the UI development phases for ThreatIQ. Use the checkboxes to mark progress as you complete tasks. To update progress, edit this file and change `[ ]` to `[x]` for completed items.
+Track progress by changing `[ ]` to `[x]` as you complete each item.
 
 ---
 
-## ✅ PHASE 1 — Launchable MVP (Ship This First)
-This version proves the idea works. Build and ship these core features first so users can sign up, report, and view incidents.
+## PHASE 1 -- Launchable MVP (Ship This First)
 
-**Goal**
-- [ ] Users can create an account
-- [ ] Users can log in
-- [ ] Users can view incidents
-- [ ] Users can report incidents
-- [ ] Deploy MVP (basic hosting / deployment)
+This version proves the idea works. Users can sign up, log in, view incidents, and report incidents.
 
-**Pages to build**
-- Landing Page
-  - [ ] Hero section
-  - [ ] Short explanation
-  - [ ] CTA → Sign up
-  - [ ] Feature highlights
-  - [ ] Footer
-- Authentication
-  - [ ] Login page
-  - [ ] Register page
-  - [ ] Forgot password page
-  - [ ] Reusable UI pieces: inputs, validation states, error display, loading button state
-- Dashboard (Core)
-  - [ ] Minimal overview
-  - [ ] Stats cards (total incidents, active incidents)
-  - [ ] Recent incident list
-  - [ ] Quick “Report Incident” button
-- Incident Feed
-  - [ ] List of all incidents
-  - [ ] Incident card component (severity badge, timestamp, location)
-  - [ ] Basic filtering (by severity, time)
-- Report Incident Page (MVP)
-  - [ ] Incident type dropdown
-  - [ ] Location input (text)
-  - [ ] Description textarea
-  - [ ] Severity selector
-  - [ ] Submit button
-  - Note: No map integration for Phase 1 — keep backend minimal.
+### Goal
+- [ ] Users can create an account (backend wired)
+- [ ] Users can log in (backend wired)
+- [ ] Users can view incidents (backend wired)
+- [ ] Users can report incidents (backend wired)
+- [ ] Deploy MVP
 
-**Design system (basic components for reuse)**
-- [ ] Button
-- [ ] Card
-- [ ] Badge
-- [ ] Input
+### Pages
+
+**Landing Page**
+- [x] Hero section
+- [x] Short explanation
+- [x] CTA -> Sign up
+- [x] Feature highlights
+- [x] Footer
+
+**Authentication**
+- [x] Login page
+- [x] Register page
+- [x] Forgot password page
+- [ ] Input validation states and error display
+- [ ] Loading button state
+
+**Dashboard (Core)**
+- [x] Minimal overview layout
+- [x] Stats cards (active incidents, total incidents, community reports, high-risk areas)
+- [x] Recent incident list (live feed sidebar)
+- [x] Quick "Report Incident" button
+
+**Incident Feed**
+- [x] List of all incidents (grid + list view)
+- [x] Incident card component (severity badge, timestamp, location, confidence)
+- [x] Basic filtering (by severity, text search)
+
+**Report Incident Page**
+- [x] Incident type dropdown
+- [x] Location input (text)
+- [x] Description textarea
+- [x] Severity selector (slider)
+- [x] Submit button
+- Note: No map integration for Phase 1.
+
+### Design System (basic reusable components)
+- [x] Button
+- [x] Card (glass-card pattern)
+- [x] Input
+- [x] Select
+- [x] Checkbox
+- [ ] Badge (standalone)
 - [ ] Modal
-- [ ] Spinner
-- [ ] Alert banner
+- [ ] Spinner / Loading indicator
+- [ ] Alert banner / Toast
 
-**Backend (Phase 1 minimum APIs)**
-- [ ] Auth (register, login)
-- [ ] Create incident API
-- [ ] Get incidents API
-- [ ] Get dashboard stats API
+### Backend (Phase 1 minimum APIs)
+- [ ] POST /api/auth/register
+- [ ] POST /api/auth/login
+- [ ] POST /api/auth/forgot-password
+- [ ] POST /api/incidents (create incident)
+- [ ] GET  /api/incidents (list incidents with filters)
+- [ ] GET  /api/incidents/:id (single incident)
+- [ ] GET  /api/dashboard/stats (KPI data)
+
+### Phase 1 Status
+- UI pages: DONE (all built, Nigeria-localized)
+- Non-MVP pages: hidden behind "Coming Soon" placeholder
+- Sidebar: trimmed to MVP items only (Dashboard, Threat Feed, Report Incident)
+- Remaining: backend APIs, input validation, loading states, deploy
 
 ---
 
-## 🟡 PHASE 2 — Product Expansion
-Add features to make the product feel powerful and collaborative.
+## PHASE 2 -- Product Expansion
 
 - Map Intelligence Page
   - [ ] Map markers
@@ -80,8 +97,7 @@ Add features to make the product feel powerful and collaborative.
 
 ---
 
-## 🔵 PHASE 3 — Advanced Platform Features
-Enterprise and workflow features, moderation, and real-time capabilities.
+## PHASE 3 -- Advanced Platform Features
 
 - [ ] Role-based dashboards
 - [ ] Admin moderation tools
@@ -93,24 +109,9 @@ Enterprise and workflow features, moderation, and real-time capabilities.
 
 ---
 
-## 🟣 PHASE 4 — Intelligence Level Features
-AI & advanced analytics that elevate ThreatIQ to an intelligence platform.
+## PHASE 4 -- Intelligence Level Features
 
 - [ ] AI risk scoring
 - [ ] Pattern detection
 - [ ] Predictive alerts
 - [ ] Smart clustering and recommendation engine
-
----
-
-## How to use this file
-- Edit the file and mark tasks complete by changing `[ ]` to `[x]`.
-- Keep Phase 1 focused and small — ship fast, iterate often.
-- When Phase 1 is fully checked and deployed, move items from Phase 2 into your sprint planning.
-
-If you want, I can:
-- Create GitHub issues for each Phase 1 task
-- Initialize a simple project board and populate it from these checkboxes
-- Add a `CONTRIBUTING.md` and developer quickstart
-
-File path: `docs/ui-development-phases.md`

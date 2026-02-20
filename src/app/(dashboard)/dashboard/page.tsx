@@ -97,8 +97,14 @@ export default function DashboardPage() {
   return (
     <div className="space-y-6 pb-12">
       {/* Header with Search and Status */}
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-end gap-4">
-        
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <a
+          href="/threat/report"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold text-sm transition"
+        >
+          <AlertTriangle className="w-4 h-4" />
+          Report Incident
+        </a>
 
         <div className="flex items-center gap-3">
           <button className="p-2 rounded-lg border border-[#2D3A4F] hover:bg-[#1A2332] transition">

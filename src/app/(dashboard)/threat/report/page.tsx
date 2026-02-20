@@ -150,7 +150,7 @@ export default function ReportIncidentPage() {
             <Input
               type="text"
               name="location"
-              placeholder="San Francisco Downtown, Market St"
+              placeholder="e.g. Wuse Market, Abuja or Lekki Phase 1, Lagos"
               value={formData.location}
               onChange={handleInputChange}
               className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563]"
