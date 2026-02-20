@@ -16,7 +16,7 @@ export default function DashboardLayout({
 
   return (
      <SidebarProvider>
-    <div className="flex h-screen bg-[#0F172A] text-[#F9FAFB]">
+    <div className="flex h-screen bg-background text-foreground">
       {/* Sidebar Component */}
       <Sidebar 
         sidebarOpen={sidebarOpen} 

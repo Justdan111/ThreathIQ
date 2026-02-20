@@ -53,14 +53,14 @@ export default function Sidebar({
     <>
       {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 bg-[#0B1F3A] border-r border-[#2D3A4F] transform transition-all duration-300 md:relative md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 bg-sidebar border-r border-sidebar-border transform transition-all duration-300 md:relative md:translate-x-0 ${
           sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         } ${isCollapsed ? 'md:w-20' : 'md:w-64'} w-64`}
       >
         <div className="flex flex-col h-full">
           {/* Logo */}
-          <div className="flex items-center gap-3 px-6 py-6 border-b border-[#2D3A4F]">
-            <Shield className="w-8 h-8 text-[#2563EB] shrink-0" />
+          <div className="flex items-center gap-3 px-6 py-6 border-b border-sidebar-border">
+            <Shield className="w-8 h-8 text-primary shrink-0" />
             {!isCollapsed && <span className="text-xl font-bold">ThreatIQ</span>}
           </div>
 
@@ -69,7 +69,7 @@ export default function Sidebar({
             {/* Collapse Toggle Button (Desktop only) */}
             <button
               onClick={() => setIsCollapsed(!isCollapsed)}
-              className="hidden md:flex items-center justify-center w-full px-3 py-2 mb-4 rounded-lg text-[#9CA3AF] hover:bg-[#1A2332] hover:text-[#F9FAFB] transition-all"
+              className="hidden md:flex items-center justify-center w-full px-3 py-2 mb-4 rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-all"
               title={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
             >
               {isCollapsed ? (
@@ -85,7 +85,7 @@ export default function Sidebar({
             {/* Main Items */}
             <div>
               {!isCollapsed && (
-                <p className="px-3 py-2 text-xs font-semibold text-[#4B5563] uppercase tracking-wider">
+                <p className="px-3 py-2 text-xs font-semibold text-muted-foreground/70 uppercase tracking-wider">
                   Main
                 </p>
               )}
@@ -96,8 +96,8 @@ export default function Sidebar({
                   onClick={() => setSidebarOpen(false)}
                   className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all ${
                     isActive(item.href)
-                      ? 'bg-[#2563EB]/20 text-[#2563EB] border border-[#2563EB]/50'
-                      : 'text-[#9CA3AF] hover:bg-[#1A2332] hover:text-[#F9FAFB]'
+                      ? 'bg-primary/20 text-primary border border-primary/50'
+                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                   } ${isCollapsed ? 'justify-center' : ''}`}
                   title={isCollapsed ? item.label : ''}
                 >
@@ -111,11 +111,11 @@ export default function Sidebar({
             {isAdmin && (
               <div>
                 {!isCollapsed && (
-                  <p className="px-3 py-2 text-xs font-semibold text-[#4B5563] uppercase tracking-wider mt-6">
+                  <p className="px-3 py-2 text-xs font-semibold text-muted-foreground/70 uppercase tracking-wider mt-6">
                     Admin
                   </p>
                 )}
-                {isCollapsed && <div className="border-t border-[#2D3A4F] my-4"></div>}
+                {isCollapsed && <div className="border-t border-sidebar-border my-4"></div>}
                 {ADMIN_ITEMS.map((item) => (
                   <Link
                     key={item.href}
@@ -123,8 +123,8 @@ export default function Sidebar({
                     onClick={() => setSidebarOpen(false)}
                     className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all ${
                       isActive(item.href)
-                        ? 'bg-[#E63946]/20 text-[#E63946] border border-[#E63946]/50'
-                        : 'text-[#9CA3AF] hover:bg-[#1A2332] hover:text-[#F9FAFB]'
+                        ? 'bg-destructive/20 text-destructive border border-destructive/50'
+                        : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                     } ${isCollapsed ? 'justify-center' : ''}`}
                     title={isCollapsed ? item.label : ''}
                   >
@@ -137,13 +137,13 @@ export default function Sidebar({
           </nav>
 
           {/* Bottom Items */}
-          <div className="border-t border-[#2D3A4F] px-4 py-4 space-y-2">
+          <div className="border-t border-sidebar-border px-4 py-4 space-y-2">
             {BOTTOM_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setSidebarOpen(false)}
-                className={`flex items-center gap-3 px-3 py-2 rounded-lg text-[#9CA3AF] hover:bg-[#1A2332] hover:text-[#F9FAFB] transition-all ${
+                className={`flex items-center gap-3 px-3 py-2 rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-all ${
                   isCollapsed ? 'justify-center' : ''
                 }`}
                 title={isCollapsed ? item.label : ''}
@@ -155,9 +155,9 @@ export default function Sidebar({
           </div>
 
           {/* User Profile */}
-          <div className="border-t border-[#2D3A4F] px-4 py-4">
+          <div className="border-t border-sidebar-border px-4 py-4">
             <button 
-              className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-[#E63946] hover:bg-[#E63946]/10 transition-all ${
+              className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-destructive hover:bg-destructive/10 transition-all ${
                 isCollapsed ? 'justify-center' : ''
               }`}
               title={isCollapsed ? 'Logout' : ''}
