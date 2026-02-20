@@ -59,20 +59,20 @@ export default function SettingsPage() {
     <div className="max-w-3xl space-y-8 pb-12">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-[#F9FAFB]">Settings</h1>
-        <p className="text-[#9CA3AF] mt-1">Manage your profile and account security</p>
+        <h1 className="text-3xl font-bold text-foreground">Settings</h1>
+        <p className="text-muted-foreground mt-1">Manage your profile and account security</p>
       </div>
 
       {/* Profile Section */}
-      <form onSubmit={handleSaveProfile} className="glass-card p-6 md:p-8 space-y-6 border border-[#2D3A4F] rounded-lg">
-        <div className="flex items-center gap-3 border-b border-[#2D3A4F] pb-4">
-          <User className="w-5 h-5 text-[#2563EB]" />
-          <h2 className="text-lg font-semibold text-[#F9FAFB]">Profile Information</h2>
+      <form onSubmit={handleSaveProfile} className="glass-card p-6 md:p-8 space-y-6 border border-border rounded-lg">
+        <div className="flex items-center gap-3 border-b border-border pb-4">
+          <User className="w-5 h-5 text-primary" />
+          <h2 className="text-lg font-semibold text-foreground">Profile Information</h2>
         </div>
 
         {/* Avatar placeholder */}
         <div className="flex items-center gap-4">
-          <div className="w-16 h-16 rounded-full bg-linear-to-br from-[#2563EB] to-[#22D3EE] flex items-center justify-center text-xl font-bold text-white">
+          <div className="w-16 h-16 rounded-full bg-linear-to-br from-primary to-accent flex items-center justify-center text-xl font-bold text-primary-foreground">
             {profile.fullName
               .split(' ')
               .map(n => n[0])
@@ -80,54 +80,53 @@ export default function SettingsPage() {
               .slice(0, 2)}
           </div>
           <div>
-            <p className="text-[#F9FAFB] font-medium">{profile.fullName}</p>
-            <p className="text-sm text-[#9CA3AF]">{profile.role}</p>
+            <p className="text-foreground font-medium">{profile.fullName}</p>
+            <p className="text-sm text-muted-foreground">{profile.role}</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-[#F9FAFB]">Full Name</label>
+            <label className="block text-sm font-medium text-foreground">Full Name</label>
             <Input
               name="fullName"
               value={profile.fullName}
               onChange={handleProfileChange}
-              className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563]"
+              className="bg-card border-border text-foreground placeholder:text-muted-foreground"
             />
           </div>
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-[#F9FAFB]">Email Address</label>
+            <label className="block text-sm font-medium text-foreground">Email Address</label>
             <Input
               name="email"
               type="email"
               value={profile.email}
               onChange={handleProfileChange}
-              className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563]"
+              className="bg-card border-border text-foreground placeholder:text-muted-foreground"
             />
           </div>
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-[#F9FAFB]">Phone Number</label>
+            <label className="block text-sm font-medium text-foreground">Phone Number</label>
             <Input
               name="phone"
               value={profile.phone}
               onChange={handleProfileChange}
-              className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563]"
+              className="bg-card border-border text-foreground placeholder:text-muted-foreground"
             />
           </div>
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-[#F9FAFB]">Organization</label>
+            <label className="block text-sm font-medium text-foreground">Organization</label>
             <Input
               name="organization"
               value={profile.organization}
               onChange={handleProfileChange}
-              className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563]"
+              className="bg-card border-border text-foreground placeholder:text-muted-foreground"
             />
           </div>
         </div>
 
         <div className="flex items-center gap-3 pt-2">
-          <Button type="submit" className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white gap-2">
-            <Save className="w-4 h-4" />
+          <Button type="submit" className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
             Save Changes
           </Button>
           {profileSaved && (
@@ -137,15 +136,15 @@ export default function SettingsPage() {
       </form>
 
       {/* Password Section */}
-      <form onSubmit={handleChangePassword} className="glass-card p-6 md:p-8 space-y-6 border border-[#2D3A4F] rounded-lg">
-        <div className="flex items-center gap-3 border-b border-[#2D3A4F] pb-4">
-          <Lock className="w-5 h-5 text-[#2563EB]" />
-          <h2 className="text-lg font-semibold text-[#F9FAFB]">Change Password</h2>
+      <form onSubmit={handleChangePassword} className="glass-card p-6 md:p-8 space-y-6 border border-border rounded-lg">
+        <div className="flex items-center gap-3 border-b border-border pb-4">
+          <Lock className="w-5 h-5 text-primary" />
+          <h2 className="text-lg font-semibold text-foreground">Change Password</h2>
         </div>
 
         <div className="space-y-5">
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-[#F9FAFB]">Current Password</label>
+            <label className="block text-sm font-medium text-foreground">Current Password</label>
             <div className="relative">
               <Input
                 name="current"
@@ -153,12 +152,12 @@ export default function SettingsPage() {
                 placeholder="Enter current password"
                 value={passwords.current}
                 onChange={handlePasswordChange}
-                className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563] pr-10"
+                className="bg-card border-border text-foreground placeholder:text-muted-foreground pr-10"
               />
               <button
                 type="button"
                 onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#4B5563] hover:text-[#2563EB]"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-primary"
               >
                 {showCurrentPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
               </button>
@@ -166,7 +165,7 @@ export default function SettingsPage() {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-[#F9FAFB]">New Password</label>
+            <label className="block text-sm font-medium text-foreground">New Password</label>
             <div className="relative">
               <Input
                 name="newPassword"
@@ -174,36 +173,34 @@ export default function SettingsPage() {
                 placeholder="Enter new password"
                 value={passwords.newPassword}
                 onChange={handlePasswordChange}
-                className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563] pr-10"
+                className="bg-card border-border text-foreground placeholder:text-muted-foreground pr-10"
               />
               <button
                 type="button"
                 onClick={() => setShowNewPassword(!showNewPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#4B5563] hover:text-[#2563EB]"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-primary"
               >
                 {showNewPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
               </button>
             </div>
-            <p className="text-xs text-[#4B5563]">Minimum 12 characters with uppercase, number, and special character</p>
+            <p className="text-xs text-muted-foreground/70">Minimum 12 characters with uppercase, number, and special character</p>
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-[#F9FAFB]">Confirm New Password</label>
+            <label className="block text-sm font-medium text-foreground">Confirm New Password</label>
             <Input
               name="confirm"
               type="password"
               placeholder="Re-enter new password"
               value={passwords.confirm}
               onChange={handlePasswordChange}
-              className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563]"
+              className="bg-card border-border text-foreground placeholder:text-muted-foreground"
             />
           </div>
         </div>
 
         <div className="flex items-center gap-3 pt-2">
-          <Button type="submit" className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white gap-2">
-            <Lock className="w-4 h-4" />
-            Update Password
+          <Button type="submit" className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
           </Button>
           {passwordSaved && (
             <span className="text-sm text-green-400 font-medium">Password updated!</span>
@@ -214,7 +211,7 @@ export default function SettingsPage() {
       {/* Danger Zone */}
       <div className="glass-card p-6 md:p-8 space-y-4 border border-red-500/30 rounded-lg">
         <h2 className="text-lg font-semibold text-red-400">Danger Zone</h2>
-        <p className="text-sm text-[#9CA3AF]">
+        <p className="text-sm text-muted-foreground">
           Permanently delete your account and all associated data. This action cannot be undone.
         </p>
         <Button

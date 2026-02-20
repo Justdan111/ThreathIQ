@@ -59,20 +59,20 @@ export default function ReportIncidentPage() {
     <div className="max-w-4xl space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-4xl font-bold text-[#F9FAFB]">Report an Incident</h1>
-        <p className="text-[#9CA3AF] mt-2">Share what you observed. Your report helps protect your community and is verified by other members.</p>
+        <h1 className="text-4xl font-bold text-foreground">Report an Incident</h1>
+        <p className="text-muted-foreground mt-2">Share what you observed. Your report helps protect your community and is verified by other members.</p>
       </div>
 
       {/* AI Validation Indicator */}
       <div className="glass-card p-6 border-l-4 border-blue-500">
         <div className="flex items-start gap-4">
-          <Shield className="w-6 h-6 text-[#2563EB] shrink-0 mt-1" />
+          <Shield className="w-6 h-6 text-primary shrink-0 mt-1" />
           <div className="flex-1">
-            <h3 className="font-semibold text-[#F9FAFB] mb-1">AI VALIDATION CONFIDENCE</h3>
-            <div className="w-full bg-[#1A2332] rounded-full h-2 mb-2">
+            <h3 className="font-semibold text-foreground mb-1">AI VALIDATION CONFIDENCE</h3>
+            <div className="w-full bg-card rounded-full h-2 mb-2">
               <div className="bg-linear-to-r from-blue-500 to-cyan-400 h-2 rounded-full" style={{ width: '72%' }}></div>
             </div>
-            <p className="text-sm text-[#9CA3AF]">72% VALID - High semantic detail helps accelerate verification.</p>
+            <p className="text-sm text-muted-foreground">72% VALID - High semantic detail helps accelerate verification.</p>
           </div>
         </div>
       </div>
@@ -81,17 +81,17 @@ export default function ReportIncidentPage() {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Threat Category */}
         <div className="glass-card p-6 space-y-4">
-          <h2 className="text-lg font-semibold text-[#F9FAFB]">Threat Information</h2>
+          <h2 className="text-lg font-semibold text-foreground">Threat Information</h2>
 
           <div>
-            <label className="block text-sm font-medium text-[#F9FAFB] mb-2">
+            <label className="block text-sm font-medium text-foreground mb-2">
               Incident Type
             </label>
             <Select value={formData.category} onValueChange={(value) => handleSelectChange('category', value)}>
-              <SelectTrigger className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB]">
+              <SelectTrigger className="bg-card border-border text-foreground">
                 <SelectValue placeholder="Select incident type" />
               </SelectTrigger>
-              <SelectContent className="bg-[#1A2332] border-[#2D3A4F]">
+              <SelectContent className="bg-card border-border">
                 <SelectItem value="accident">Traffic Accident</SelectItem>
                 <SelectItem value="suspicious">Suspicious Activity</SelectItem>
                 <SelectItem value="assault">Assault/Violence</SelectItem>
@@ -106,7 +106,7 @@ export default function ReportIncidentPage() {
 
           {/* Severity Slider */}
           <div>
-            <label className="block text-sm font-medium text-[#F9FAFB] mb-4">
+            <label className="block text-sm font-medium text-foreground mb-4">
               Severity Level
             </label>
             <div className="space-y-4">
@@ -120,13 +120,13 @@ export default function ReportIncidentPage() {
                     const levels = ['low', 'medium', 'high', 'critical'];
                     handleSelectChange('severity', levels[parseInt(e.target.value) - 1]);
                   }}
-                  className="flex-1 h-2 bg-[#1A2332] rounded-lg appearance-none cursor-pointer accent-blue-500"
+                  className="flex-1 h-2 bg-card rounded-lg appearance-none cursor-pointer accent-blue-500"
                 />
                 <div className={`px-4 py-2 rounded-lg font-semibold ${getSeverityColor(formData.severity).bg} ${getSeverityColor(formData.severity).text}`}>
                   {formData.severity.toUpperCase()}
                 </div>
               </div>
-              <div className="flex justify-between text-xs text-[#4B5563]">
+              <div className="flex justify-between text-xs text-muted-foreground/70">
                 <span>Low</span>
                 <span>Moderate</span>
                 <span>High</span>
@@ -138,13 +138,13 @@ export default function ReportIncidentPage() {
 
         {/* Location Section */}
         <div className="glass-card p-6 space-y-4">
-          <h2 className="text-lg font-semibold text-[#F9FAFB] flex items-center gap-2">
+          <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
             <MapPin className="w-5 h-5" />
             Incident Location
           </h2>
 
           <div>
-            <label className="block text-sm font-medium text-[#F9FAFB] mb-2">
+            <label className="block text-sm font-medium text-foreground mb-2">
               Location or Affected Region
             </label>
             <Input
@@ -153,24 +153,24 @@ export default function ReportIncidentPage() {
               placeholder="e.g. Wuse Market, Abuja or Lekki Phase 1, Lagos"
               value={formData.location}
               onChange={handleInputChange}
-              className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563]"
+              className="bg-card border-border text-foreground placeholder:text-muted-foreground"
             />
           </div>
 
-          <div className="h-48 bg-linear-to-br from-[#1A2332] to-[#0F172A] rounded-lg border border-[#2D3A4F] flex items-center justify-center">
+          <div className="h-48 bg-linear-to-br from-card to-background rounded-lg border border-border flex items-center justify-center">
             <div className="text-center">
-              <MapPin className="w-8 h-8 text-[#2563EB] mx-auto mb-2" />
-              <p className="text-[#9CA3AF]">Interactive map will load here</p>
+              <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
+              <p className="text-muted-foreground">Interactive map will load here</p>
             </div>
           </div>
         </div>
 
         {/* Description Section */}
         <div className="glass-card p-6 space-y-4">
-          <h2 className="text-lg font-semibold text-[#F9FAFB]">Description of Incident</h2>
+          <h2 className="text-lg font-semibold text-foreground">Description of Incident</h2>
 
           <div>
-            <label className="block text-sm font-medium text-[#F9FAFB] mb-2">
+            <label className="block text-sm font-medium text-foreground mb-2">
               Detailed Description
             </label>
             <textarea
@@ -179,9 +179,9 @@ export default function ReportIncidentPage() {
               value={formData.description}
               onChange={handleInputChange}
               rows={6}
-              className="w-full bg-[#1A2332] border border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563] rounded-lg p-4 focus:outline-none focus:border-[#2563EB]"
+              className="w-full bg-card border border-border text-foreground placeholder:text-muted-foreground rounded-lg p-4 focus:outline-none focus:border-primary"
             />
-            <p className="text-xs text-[#4B5563] mt-2">
+            <p className="text-xs text-muted-foreground/70 mt-2">
               AI Analysis: High semantic detail helps accelerate verification.
             </p>
           </div>
@@ -189,16 +189,16 @@ export default function ReportIncidentPage() {
 
         {/* Evidence Upload Section */}
         <div className="glass-card p-6 space-y-4">
-          <h2 className="text-lg font-semibold text-[#F9FAFB] flex items-center gap-2">
+          <h2 className="text-lg font-semibold text-foreground flex items-center gap-2">
             <Upload className="w-5 h-5" />
             Evidence Upload
           </h2>
 
-          <div className="border-2 border-dashed border-[#2D3A4F] rounded-lg p-8 text-center hover:border-[#2563EB] transition">
+          <div className="border-2 border-dashed border-border rounded-lg p-8 text-center hover:border-primary transition">
             <div className="flex flex-col items-center">
-              <Upload className="w-12 h-12 text-[#4B5563] mb-4" />
-              <p className="text-[#F9FAFB] font-medium mb-2">Drag & drop evidence files</p>
-              <p className="text-[#9CA3AF] text-sm mb-4">Supports logs, images, and telemetry data (max 50MB)</p>
+              <Upload className="w-12 h-12 text-muted-foreground/70 mb-4" />
+              <p className="text-foreground font-medium mb-2">Drag & drop evidence files</p>
+              <p className="text-muted-foreground text-sm mb-4">Supports logs, images, and telemetry data (max 50MB)</p>
               <label>
                 <input
                   type="file"
@@ -207,7 +207,7 @@ export default function ReportIncidentPage() {
                   className="hidden"
                   accept=".log,.txt,.jpg,.png,.pcap,.json"
                 />
-                <span className="px-4 py-2 rounded-lg bg-[#2563EB] text-white cursor-pointer hover:bg-[#1D4ED8] transition inline-block">
+                <span className="px-4 py-2 rounded-lg bg-primary text-primary-foreground cursor-pointer hover:bg-primary/90 transition inline-block">
                   Browse Files
                 </span>
               </label>
@@ -217,20 +217,20 @@ export default function ReportIncidentPage() {
           {/* Uploaded Files */}
           {uploadedFiles.length > 0 && (
             <div className="space-y-2">
-              <p className="text-sm font-medium text-[#F9FAFB]">Uploaded Files</p>
+              <p className="text-sm font-medium text-foreground">Uploaded Files</p>
               {uploadedFiles.map((file, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center justify-between p-3 rounded-lg bg-[#1A2332] border border-[#2D3A4F]"
+                  className="flex items-center justify-between p-3 rounded-lg bg-card border border-border"
                 >
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-sm text-[#F9FAFB]">{file}</span>
+                    <span className="text-sm text-foreground">{file}</span>
                   </div>
                   <button
                     type="button"
                     onClick={() => setUploadedFiles(prev => prev.filter((_, i) => i !== idx))}
-                    className="text-[#E63946] hover:text-red-400 text-sm"
+                    className="text-destructive hover:text-red-400 text-sm"
                   >
                     Remove
                   </button>
@@ -244,8 +244,8 @@ export default function ReportIncidentPage() {
         <div className="glass-card p-6 border-l-4 border-green-500 flex gap-4">
           <Shield className="w-6 h-6 text-green-400 shrink-0 mt-1" />
           <div>
-            <p className="font-semibold text-[#F9FAFB] mb-1">End-to-end encrypted</p>
-            <p className="text-sm text-[#9CA3AF]">
+            <p className="font-semibold text-foreground mb-1">End-to-end encrypted</p>
+            <p className="text-sm text-muted-foreground">
               Your report is encrypted and verified by AI. Verification node 0x7F2... verified.
             </p>
           </div>
@@ -256,11 +256,11 @@ export default function ReportIncidentPage() {
           <Button
             type="button"
             variant="outline"
-            className="flex-1 border-[#2D3A4F] text-[#F9FAFB] hover:bg-[#1A2332] bg-transparent"
+            className="flex-1 border-border text-foreground hover:bg-muted bg-transparent"
           >
             Save as Draft
           </Button>
-          <Button className="flex-1 bg-[#2563EB] hover:bg-[#1D4ED8] text-white">
+          <Button className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground">
             Submit Verified Report
           </Button>
         </div>

@@ -113,39 +113,39 @@ export default function AdminPage() {
     <div className="max-w-4xl space-y-6 pb-12">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-[#F9FAFB]">Admin Approvals</h1>
-        <p className="text-[#9CA3AF] mt-1">Review and approve community-reported incidents</p>
+        <h1 className="text-3xl font-bold text-foreground">Admin Approvals</h1>
+        <p className="text-muted-foreground mt-1">Review and approve community-reported incidents</p>
       </div>
 
       {/* Stats */}
       <div className="grid grid-cols-3 gap-4">
-        <div className="glass-card p-4 border border-[#2D3A4F] rounded-lg text-center">
+        <div className="glass-card p-4 border border-border rounded-lg text-center">
           <Clock className="w-5 h-5 text-yellow-400 mx-auto mb-1" />
-          <p className="text-2xl font-bold text-[#F9FAFB]">{counts.pending}</p>
-          <p className="text-xs text-[#9CA3AF]">Pending</p>
+          <p className="text-2xl font-bold text-foreground">{counts.pending}</p>
+          <p className="text-xs text-muted-foreground">Pending</p>
         </div>
-        <div className="glass-card p-4 border border-[#2D3A4F] rounded-lg text-center">
+        <div className="glass-card p-4 border border-border rounded-lg text-center">
           <CheckCircle className="w-5 h-5 text-green-400 mx-auto mb-1" />
-          <p className="text-2xl font-bold text-[#F9FAFB]">{counts.approved}</p>
-          <p className="text-xs text-[#9CA3AF]">Approved</p>
+          <p className="text-2xl font-bold text-foreground">{counts.approved}</p>
+          <p className="text-xs text-muted-foreground">Approved</p>
         </div>
-        <div className="glass-card p-4 border border-[#2D3A4F] rounded-lg text-center">
+        <div className="glass-card p-4 border border-border rounded-lg text-center">
           <XCircle className="w-5 h-5 text-red-400 mx-auto mb-1" />
-          <p className="text-2xl font-bold text-[#F9FAFB]">{counts.rejected}</p>
-          <p className="text-xs text-[#9CA3AF]">Rejected</p>
+          <p className="text-2xl font-bold text-foreground">{counts.rejected}</p>
+          <p className="text-xs text-muted-foreground">Rejected</p>
         </div>
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex gap-2 border-b border-[#2D3A4F]">
+      <div className="flex gap-2 border-b border-border">
         {(['pending', 'approved', 'rejected', 'all'] as const).map(tab => (
           <button
             key={tab}
             onClick={() => setFilter(tab)}
             className={`px-4 py-3 text-sm font-medium border-b-2 transition capitalize ${
               filter === tab
-                ? 'border-[#2563EB] text-[#2563EB]'
-                : 'border-transparent text-[#9CA3AF] hover:text-[#F9FAFB]'
+                ? 'border-primary text-primary'
+                : 'border-transparent text-muted-foreground hover:text-foreground'
             }`}
           >
             {tab}
@@ -162,8 +162,8 @@ export default function AdminPage() {
       <div className="space-y-4">
         {filtered.length === 0 ? (
           <div className="text-center py-16">
-            <ShieldCheck className="w-12 h-12 text-[#4B5563] mx-auto mb-4 opacity-50" />
-            <p className="text-[#9CA3AF]">No incidents in this category</p>
+            <ShieldCheck className="w-12 h-12 text-muted-foreground/70 mx-auto mb-4 opacity-50" />
+            <p className="text-muted-foreground">No incidents in this category</p>
           </div>
         ) : (
           filtered.map(incident => {
@@ -175,7 +175,7 @@ export default function AdminPage() {
                 key={incident.id}
                 className={`glass-card p-5 border rounded-lg transition-all ${
                   incident.status === 'pending'
-                    ? 'border-[#2D3A4F]'
+                    ? 'border-border'
                     : incident.status === 'approved'
                     ? 'border-green-500/30 opacity-80'
                     : 'border-red-500/30 opacity-60'
@@ -188,8 +188,8 @@ export default function AdminPage() {
                       <span className={`px-2 py-0.5 rounded text-xs font-bold uppercase ${sev.bg} ${sev.text}`}>
                         {incident.severity}
                       </span>
-                      <span className="text-xs text-[#4B5563] font-mono">{incident.id}</span>
-                      <span className="text-xs text-[#4B5563]">{incident.category}</span>
+                      <span className="text-xs text-muted-foreground/70 font-mono">{incident.id}</span>
+                      <span className="text-xs text-muted-foreground/70">{incident.category}</span>
 
                       {incident.status === 'approved' && (
                         <span className="px-2 py-0.5 rounded text-xs font-semibold bg-green-500/20 text-green-400">
@@ -202,13 +202,13 @@ export default function AdminPage() {
                         </span>
                       )}
                     </div>
-                    <h3 className="text-[#F9FAFB] font-semibold">{incident.title}</h3>
+                    <h3 className="text-foreground font-semibold">{incident.title}</h3>
                   </div>
-                  <span className="text-xs text-[#4B5563] whitespace-nowrap">{incident.time}</span>
+                  <span className="text-xs text-muted-foreground/70 whitespace-nowrap">{incident.time}</span>
                 </div>
 
                 {/* Location */}
-                <div className="flex items-center gap-1.5 mt-2 text-sm text-[#9CA3AF]">
+                <div className="flex items-center gap-1.5 mt-2 text-sm text-muted-foreground">
                   <MapPin className="w-4 h-4 shrink-0" />
                   <span>{incident.location}</span>
                 </div>
@@ -216,22 +216,22 @@ export default function AdminPage() {
                 {/* Expand / collapse */}
                 <button
                   onClick={() => setExpandedId(isExpanded ? null : incident.id)}
-                  className="mt-3 flex items-center gap-1 text-xs text-[#2563EB] hover:text-[#22D3EE] font-medium transition"
+                  className="mt-3 flex items-center gap-1 text-xs text-primary hover:text-accent font-medium transition"
                 >
                   <Eye className="w-3.5 h-3.5" />
                   {isExpanded ? 'Hide Details' : 'Show Details'}
                 </button>
 
                 {isExpanded && (
-                  <div className="mt-3 pt-3 border-t border-[#2D3A4F] space-y-2">
-                    <p className="text-sm text-[#9CA3AF]">{incident.description}</p>
-                    <p className="text-xs text-[#4B5563]">Reported by: {incident.reportedBy}</p>
+                  <div className="mt-3 pt-3 border-t border-border space-y-2">
+                    <p className="text-sm text-muted-foreground">{incident.description}</p>
+                    <p className="text-xs text-muted-foreground/70">Reported by: {incident.reportedBy}</p>
                   </div>
                 )}
 
                 {/* Action buttons (only for pending) */}
                 {incident.status === 'pending' && (
-                  <div className="flex gap-3 mt-4 pt-3 border-t border-[#2D3A4F]">
+                  <div className="flex gap-3 mt-4 pt-3 border-t border-border">
                     <Button
                       onClick={() => handleAction(incident.id, 'approved')}
                       className="flex-1 bg-green-600 hover:bg-green-700 text-white gap-2"

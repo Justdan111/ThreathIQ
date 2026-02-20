@@ -101,8 +101,8 @@ export default function ThreatFeedPage() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-4xl font-bold text-[#F9FAFB]">Incident Feed</h1>
-        <p className="text-[#9CA3AF] mt-2">Real-time stream of community-reported safety incidents and alerts</p>
+        <h1 className="text-4xl font-bold text-foreground">Incident Feed</h1>
+        <p className="text-muted-foreground mt-2">Real-time stream of community-reported safety incidents and alerts</p>
       </div>
 
       {/* Filters */}
@@ -110,30 +110,30 @@ export default function ThreatFeedPage() {
         <div className="flex flex-col md:flex-row gap-4 items-end">
           {/* Search */}
           <div className="flex-1">
-            <label className="block text-sm font-medium text-[#F9FAFB] mb-2">
+            <label className="block text-sm font-medium text-foreground mb-2">
               Search Incidents
             </label>
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#4B5563]" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
               <Input
                 placeholder="Search by title, description, or location..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563]"
+                className="pl-10 bg-card border-border text-foreground placeholder:text-muted-foreground"
               />
             </div>
           </div>
 
           {/* Severity Filter */}
           <div className="w-full md:w-48">
-            <label className="block text-sm font-medium text-[#F9FAFB] mb-2">
+            <label className="block text-sm font-medium text-foreground mb-2">
               Severity Level
             </label>
             <Select value={selectedSeverity} onValueChange={setSelectedSeverity}>
-              <SelectTrigger className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB]">
+              <SelectTrigger className="bg-card border-border text-foreground">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent className="bg-[#1A2332] border-[#2D3A4F]">
+              <SelectContent className="bg-card border-border">
                 <SelectItem value="all">All Levels</SelectItem>
                 <SelectItem value="CRITICAL">Critical</SelectItem>
                 <SelectItem value="HIGH">High</SelectItem>
@@ -144,13 +144,13 @@ export default function ThreatFeedPage() {
           </div>
 
           {/* View Toggle */}
-          <div className="flex gap-2 border border-[#2D3A4F] rounded-lg p-1">
+          <div className="flex gap-2 border border-border rounded-lg p-1">
             <button
               onClick={() => setViewMode('grid')}
               className={`p-2 rounded transition-all ${
                 viewMode === 'grid'
-                  ? 'bg-[#2563EB] text-[#F9FAFB]'
-                  : 'text-[#9CA3AF] hover:text-[#F9FAFB]'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               <Grid className="w-5 h-5" />
@@ -159,8 +159,8 @@ export default function ThreatFeedPage() {
               onClick={() => setViewMode('list')}
               className={`p-2 rounded transition-all ${
                 viewMode === 'list'
-                  ? 'bg-[#2563EB] text-[#F9FAFB]'
-                  : 'text-[#9CA3AF] hover:text-[#F9FAFB]'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               <List className="w-5 h-5" />
@@ -173,7 +173,7 @@ export default function ThreatFeedPage() {
       {viewMode === 'grid' ? (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {filteredThreats.map(threat => (
-            <div key={threat.id} className="glass-card p-6 hover:border-[#2563EB]/50 transition-all cursor-pointer group">
+            <div key={threat.id} className="glass-card p-6 hover:border-primary/50 transition-all cursor-pointer group">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
@@ -186,40 +186,40 @@ export default function ThreatFeedPage() {
                       </span>
                     )}
                   </div>
-                  <h3 className="text-lg font-semibold text-[#F9FAFB] group-hover:text-[#2563EB] transition">
+                  <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition">
                     {threat.title}
                   </h3>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs text-[#4B5563]">{threat.time}</div>
-                  <div className="text-[#2563EB] font-mono text-sm">{threat.id}</div>
+                  <div className="text-xs text-muted-foreground/70">{threat.time}</div>
+                  <div className="text-primary font-mono text-sm">{threat.id}</div>
                 </div>
               </div>
 
-              <p className="text-[#9CA3AF] text-sm mb-4 line-clamp-2">
+              <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
                 {threat.description}
               </p>
 
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div>
-                  <p className="text-xs text-[#4B5563] mb-1">Location</p>
-                  <p className="text-sm text-[#F9FAFB]">{threat.location}</p>
+                  <p className="text-xs text-muted-foreground/70 mb-1">Location</p>
+                  <p className="text-sm text-foreground">{threat.location}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-[#4B5563] mb-1">Confidence</p>
-                  <p className="text-sm text-[#F9FAFB]">{threat.confidence}</p>
+                  <p className="text-xs text-muted-foreground/70 mb-1">Confidence</p>
+                  <p className="text-sm text-foreground">{threat.confidence}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-[#4B5563] mb-1">Type</p>
-                  <p className="text-sm text-[#F9FAFB]">{threat.type}</p>
+                  <p className="text-xs text-muted-foreground/70 mb-1">Type</p>
+                  <p className="text-sm text-foreground">{threat.type}</p>
                 </div>
                 <div>
-                  <p className="text-xs text-[#4B5563] mb-1">Community Reports</p>
-                  <p className="text-sm text-[#F9FAFB]">{threat.reports} reports</p>
+                  <p className="text-xs text-muted-foreground/70 mb-1">Community Reports</p>
+                  <p className="text-sm text-foreground">{threat.reports} reports</p>
                 </div>
               </div>
 
-              <Button className="w-full bg-[#2563EB]/20 hover:bg-[#2563EB] text-[#2563EB] hover:text-white border border-[#2563EB]/50">
+              <Button className="w-full bg-primary/20 hover:bg-primary text-primary hover:text-primary-foreground border border-primary/50">
                 View Details
               </Button>
             </div>
@@ -229,36 +229,36 @@ export default function ThreatFeedPage() {
         <div className="glass-card overflow-hidden">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-[#2D3A4F]">
-                <th className="text-left py-4 px-6 text-xs font-semibold text-[#4B5563] uppercase">Threat</th>
-                <th className="text-left py-4 px-6 text-xs font-semibold text-[#4B5563] uppercase">Type</th>
-                <th className="text-left py-4 px-6 text-xs font-semibold text-[#4B5563] uppercase">Location</th>
-                <th className="text-left py-4 px-6 text-xs font-semibold text-[#4B5563] uppercase">Severity</th>
-                <th className="text-left py-4 px-6 text-xs font-semibold text-[#4B5563] uppercase">Confidence</th>
-                <th className="text-left py-4 px-6 text-xs font-semibold text-[#4B5563] uppercase">Reports</th>
+              <tr className="border-b border-border">
+                <th className="text-left py-4 px-6 text-xs font-semibold text-muted-foreground/70 uppercase">Threat</th>
+                <th className="text-left py-4 px-6 text-xs font-semibold text-muted-foreground/70 uppercase">Type</th>
+                <th className="text-left py-4 px-6 text-xs font-semibold text-muted-foreground/70 uppercase">Location</th>
+                <th className="text-left py-4 px-6 text-xs font-semibold text-muted-foreground/70 uppercase">Severity</th>
+                <th className="text-left py-4 px-6 text-xs font-semibold text-muted-foreground/70 uppercase">Confidence</th>
+                <th className="text-left py-4 px-6 text-xs font-semibold text-muted-foreground/70 uppercase">Reports</th>
               </tr>
             </thead>
             <tbody>
               {filteredThreats.map(threat => (
                 <tr
                   key={threat.id}
-                  className="border-b border-[#1A2332] hover:bg-[#1A2332]/50 transition cursor-pointer"
+                  className="border-b border-border hover:bg-card/50 transition cursor-pointer"
                 >
                   <td className="py-4 px-6">
                     <div>
-                      <div className="text-[#2563EB] font-mono text-xs">{threat.id}</div>
-                      <div className="text-sm text-[#F9FAFB] font-medium">{threat.title}</div>
+                      <div className="text-primary font-mono text-xs">{threat.id}</div>
+                      <div className="text-sm text-foreground font-medium">{threat.title}</div>
                     </div>
                   </td>
-                  <td className="py-4 px-6 text-sm text-[#9CA3AF]">{threat.type}</td>
-                  <td className="py-4 px-6 text-sm text-[#9CA3AF]">{threat.location}</td>
+                  <td className="py-4 px-6 text-sm text-muted-foreground">{threat.type}</td>
+                  <td className="py-4 px-6 text-sm text-muted-foreground">{threat.location}</td>
                   <td className="py-4 px-6">
                     <span className={getSeverityColor(threat.severity)}>
                       {threat.severity}
                     </span>
                   </td>
-                  <td className="py-4 px-6 text-sm text-[#F9FAFB]">{threat.confidence}</td>
-                  <td className="py-4 px-6 text-sm text-[#F9FAFB]">{threat.reports}</td>
+                  <td className="py-4 px-6 text-sm text-foreground">{threat.confidence}</td>
+                  <td className="py-4 px-6 text-sm text-foreground">{threat.reports}</td>
                 </tr>
               ))}
             </tbody>

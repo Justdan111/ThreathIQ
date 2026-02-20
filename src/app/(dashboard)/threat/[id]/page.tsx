@@ -31,14 +31,14 @@ export default function IncidentDetailPage({
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-red-500/20 text-red-400 mb-2">
                 CRITICAL
               </span>
-              <h1 className="text-3xl font-bold text-[#F9FAFB]">
+              <h1 className="text-3xl font-bold text-foreground">
                 Major Traffic Accident - Downtown
               </h1>
-              <p className="text-[#9CA3AF] mt-2">ID: #INC-89422</p>
+              <p className="text-muted-foreground mt-2">ID: #INC-89422</p>
             </div>
           </div>
           <div className="flex gap-2">
-            <Button variant="outline" className="border-[#2D3A4F] text-[#2563EB] hover:bg-[#2563EB]/10 bg-transparent">
+            <Button variant="outline" className="border-border text-primary hover:bg-primary/10 bg-transparent">
               <Share2 className="w-4 h-4" />
             </Button>
             <Button variant="outline" className="border-red-500/30 text-red-400 hover:bg-red-500/10 bg-transparent">
@@ -47,37 +47,37 @@ export default function IncidentDetailPage({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-[#1A2332]/50 rounded-lg">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-card/50 rounded-lg">
           <div>
-            <p className="text-[#9CA3AF] text-xs mb-1">AI Confidence</p>
-            <p className="text-xl font-bold text-[#F9FAFB]">98%</p>
+            <p className="text-muted-foreground text-xs mb-1">AI Confidence</p>
+            <p className="text-xl font-bold text-foreground">98%</p>
           </div>
           <div>
-            <p className="text-[#9CA3AF] text-xs mb-1">Community Reports</p>
-            <p className="text-xl font-bold text-[#F9FAFB]">42</p>
+            <p className="text-muted-foreground text-xs mb-1">Community Reports</p>
+            <p className="text-xl font-bold text-foreground">42</p>
           </div>
           <div>
-            <p className="text-[#9CA3AF] text-xs mb-1">Affected Assets</p>
-            <p className="text-xl font-bold text-[#F9FAFB]">1,240</p>
+            <p className="text-muted-foreground text-xs mb-1">Affected Assets</p>
+            <p className="text-xl font-bold text-foreground">1,240</p>
           </div>
           <div>
-            <p className="text-[#9CA3AF] text-xs mb-1">First Seen</p>
-            <p className="text-xl font-bold text-[#F9FAFB]">2 hrs ago</p>
+            <p className="text-muted-foreground text-xs mb-1">First Seen</p>
+            <p className="text-xl font-bold text-foreground">2 hrs ago</p>
           </div>
         </div>
       </div>
 
       {/* Overview */}
       <div className="glass-card p-6">
-        <h2 className="text-xl font-semibold text-[#F9FAFB] mb-4">Threat Overview</h2>
-        <p className="text-[#9CA3AF] leading-relaxed">
+        <h2 className="text-xl font-semibold text-foreground mb-4">Threat Overview</h2>
+        <p className="text-muted-foreground leading-relaxed">
           Global coordination detected across financial sector endpoints. Targeted exploitation of zero-day vulnerabilities in supply chain software. Multiple nation-state indicators observed. This is a sophisticated campaign with indicators matching previous APT activities.
         </p>
       </div>
 
       {/* Verification Status */}
       <div className="glass-card p-6">
-        <h2 className="text-lg font-semibold text-[#F9FAFB] mb-4">Verification Status</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-4">Verification Status</h2>
         <div className="space-y-3">
           <div className="flex items-center gap-3 p-3 rounded-lg bg-green-500/10 border border-green-500/30">
             <CheckCircle className="w-5 h-5 text-green-400" />
@@ -92,7 +92,7 @@ export default function IncidentDetailPage({
 
       {/* Activity Chart */}
       <div className="glass-card p-6">
-        <h2 className="text-lg font-semibold text-[#F9FAFB] mb-6">Report Activity Timeline</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-6">Report Activity Timeline</h2>
         <ResponsiveContainer width="100%" height={250}>
           <LineChart data={ACTIVITY_DATA}>
             <CartesianGrid strokeDasharray="3 3" stroke="#2D3A4F" />
@@ -118,18 +118,18 @@ export default function IncidentDetailPage({
 
       {/* Technical Indicators */}
       <div className="glass-card p-6">
-        <h2 className="text-lg font-semibold text-[#F9FAFB] mb-4">Technical Indicators</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-4">Technical Indicators</h2>
         <div className="space-y-3 font-mono text-sm">
-          <div className="p-3 rounded bg-[#1A2332] border border-[#2D3A4F]">
-            <p className="text-[#4B5563]">Hash (SHA256)</p>
-            <p className="text-[#2563EB] break-all">a7f8c3d9e2b1f4a6c8d1e3f5a7b9c1d2e4f6a8b0c2d4e6f8a0b2c4d6e8f0a1</p>
+          <div className="p-3 rounded bg-card border border-border">
+            <p className="text-muted-foreground/70">Hash (SHA256)</p>
+            <p className="text-primary break-all">a7f8c3d9e2b1f4a6c8d1e3f5a7b9c1d2e4f6a8b0c2d4e6f8a0b2c4d6e8f0a1</p>
           </div>
-          <div className="p-3 rounded bg-[#1A2332] border border-[#2D3A4F]">
-            <p className="text-[#4B5563]">Command & Control Domains</p>
-            <p className="text-[#E63946]">malicious-c2.example.com, command.threat.net</p>
+          <div className="p-3 rounded bg-card border border-border">
+            <p className="text-muted-foreground/70">Command & Control Domains</p>
+            <p className="text-destructive">malicious-c2.example.com, command.threat.net</p>
           </div>
-          <div className="p-3 rounded bg-[#1A2332] border border-[#2D3A4F]">
-            <p className="text-[#4B5563]">MITRE ATT&CK Framework</p>
+          <div className="p-3 rounded bg-card border border-border">
+            <p className="text-muted-foreground/70">MITRE ATT&CK Framework</p>
             <p className="text-cyan-400">T1547.001, T1543.004, T1588.002</p>
           </div>
         </div>
@@ -137,7 +137,7 @@ export default function IncidentDetailPage({
 
       {/* Community Discussion */}
       <div className="glass-card p-6">
-        <h2 className="text-lg font-semibold text-[#F9FAFB] mb-4 flex items-center gap-2">
+        <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
           <Users className="w-5 h-5" />
           Community Intel (42 Reports)
         </h2>
@@ -154,14 +154,14 @@ export default function IncidentDetailPage({
               verified: true
             },
           ].map((item, idx) => (
-            <div key={idx} className="p-4 rounded-lg bg-[#1A2332]/50 border border-[#2D3A4F]">
+            <div key={idx} className="p-4 rounded-lg bg-card/50 border border-border">
               <div className="flex items-center gap-2 mb-2">
-                <span className="font-semibold text-[#F9FAFB]">{item.author}</span>
+                <span className="font-semibold text-foreground">{item.author}</span>
                 {item.verified && (
                   <CheckCircle className="w-4 h-4 text-green-400" />
                 )}
               </div>
-              <p className="text-[#9CA3AF]">{item.comment}</p>
+              <p className="text-muted-foreground">{item.comment}</p>
             </div>
           ))}
         </div>
@@ -172,7 +172,7 @@ export default function IncidentDetailPage({
         <Button className="flex-1 bg-green-500/20 text-green-400 hover:bg-green-500 hover:text-white border border-green-500/30">
           Confirm Threat
         </Button>
-        <Button className="flex-1 bg-[#2563EB] hover:bg-[#1D4ED8] text-white">
+        <Button className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground">
           Add to Blocklist
         </Button>
         <Button variant="outline" className="flex-1 border-red-500/30 text-red-400 hover:bg-red-500/10 bg-transparent">

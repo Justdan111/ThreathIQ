@@ -42,17 +42,17 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex">
       {/* Left Side - Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-linear-to-br from-[#0B1F3A] to-[#0F172A] flex-col justify-between p-12">
+      <div className="hidden lg:flex lg:w-1/2 bg-linear-to-br from-sidebar to-background flex-col justify-between p-12">
         <div className="flex items-center gap-3">
-          <Shield className="w-10 h-10 text-[#2563EB]" />
-          <span className="text-2xl font-bold text-[#F9FAFB]">ThreatIQ</span>
+          <Shield className="w-10 h-10 text-primary" />
+          <span className="text-2xl font-bold text-foreground">ThreatIQ</span>
         </div>
 
         <div>
-          <h2 className="text-5xl font-bold text-[#F9FAFB] mb-6">
+          <h2 className="text-5xl font-bold text-foreground mb-6">
             Empower Your Community Against Threats
           </h2>
-          <p className="text-lg text-[#9CA3AF] mb-8 leading-relaxed">
+          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
             Create your account and join a growing network of vigilant community members. Report incidents, track threats on a live map, and help keep your neighborhood safe.
           </p>
 
@@ -63,12 +63,12 @@ export default function RegisterPage() {
               { num: '95%', label: 'Faster Response Times' }
             ].map((stat, idx) => (
               <div key={idx} className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-[#2563EB]/20 flex items-center justify-center shrink-0">
-                  <span className="text-[#2563EB] font-bold">{stat.num[0]}</span>
+                <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
+                  <span className="text-primary font-bold">{stat.num[0]}</span>
                 </div>
                 <div>
-                  <div className="font-semibold text-[#F9FAFB]">{stat.num}</div>
-                  <div className="text-sm text-[#9CA3AF]">{stat.label}</div>
+                  <div className="font-semibold text-foreground">{stat.num}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </div>
               </div>
             ))}
@@ -77,56 +77,56 @@ export default function RegisterPage() {
       </div>
 
       {/* Right Side - Registration Form */}
-      <div className="w-full lg:w-1/2 bg-[#0F172A] flex items-center justify-center p-6">
+      <div className="w-full lg:w-1/2 bg-background flex items-center justify-center p-6">
         <div className="w-full max-w-md">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-[#F9FAFB] mb-2">Create Your Account</h1>
-            <p className="text-[#9CA3AF]">Join ThreatIQ and help protect your community</p>
+            <h1 className="text-3xl font-bold text-foreground mb-2">Create Your Account</h1>
+            <p className="text-muted-foreground">Join ThreatIQ and help protect your community</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Full Name */}
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-[#F9FAFB]">Full Name</label>
+              <label className="block text-sm font-medium text-foreground">Full Name</label>
               <Input
                 type="text"
                 name="name"
                 placeholder="Your full name"
                 value={formData.name}
                 onChange={handleChange}
-                className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563] pl-4"
+                className="bg-card border-border text-foreground placeholder:text-muted-foreground pl-4"
               />
             </div>
 
             {/* Email */}
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-[#F9FAFB]">Email Address</label>
+              <label className="block text-sm font-medium text-foreground">Email Address</label>
               <Input
                 type="email"
                 name="email"
                 placeholder="name@company.com"
                 value={formData.email}
                 onChange={handleChange}
-                className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563] pl-4"
+                className="bg-card border-border text-foreground placeholder:text-muted-foreground pl-4"
               />
             </div>
 
             {/* Community / Organization */}
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-[#F9FAFB]">Community / Organization</label>
+              <label className="block text-sm font-medium text-foreground">Community / Organization</label>
               <Input
                 type="text"
                 name="company"
                 placeholder="Your community or organization"
                 value={formData.company}
                 onChange={handleChange}
-                className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563] pl-4"
+                className="bg-card border-border text-foreground placeholder:text-muted-foreground pl-4"
               />
             </div>
 
             {/* Role Selection */}
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-[#F9FAFB]">Select Your Role</label>
+              <label className="block text-sm font-medium text-foreground">Select Your Role</label>
               <div className="grid grid-cols-2 gap-2">
                 {ROLES.map(role => (
                   <button
@@ -138,12 +138,12 @@ export default function RegisterPage() {
                     }}
                     className={`p-3 rounded-lg border-2 text-left transition-all ${
                       selectedRole === role.id
-                        ? 'border-[#2563EB] bg-[#2563EB]/10'
-                        : 'border-[#2D3A4F] bg-transparent hover:border-[#2563EB]/50'
+                        ? 'border-primary bg-primary/10'
+                        : 'border-border bg-transparent hover:border-primary/50'
                     }`}
                   >
-                    <div className="font-semibold text-sm text-[#F9FAFB]">{role.label}</div>
-                    <div className="text-xs text-[#9CA3AF]">{role.desc}</div>
+                    <div className="font-semibold text-sm text-foreground">{role.label}</div>
+                    <div className="text-xs text-muted-foreground">{role.desc}</div>
                   </button>
                 ))}
               </div>
@@ -151,7 +151,7 @@ export default function RegisterPage() {
 
             {/* Password */}
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-[#F9FAFB]">Password</label>
+              <label className="block text-sm font-medium text-foreground">Password</label>
               <div className="relative">
                 <Input
                   type={showPassword ? 'text' : 'password'}
@@ -159,24 +159,24 @@ export default function RegisterPage() {
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={handleChange}
-                  className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563] pr-10"
+                  className="bg-card border-border text-foreground placeholder:text-muted-foreground pr-10"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#4B5563] hover:text-[#2563EB]"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-primary"
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
               </div>
-              <p className="text-xs text-[#4B5563]">
+              <p className="text-xs text-muted-foreground/70">
                 Minimum 12 characters with uppercase, numbers, and special characters
               </p>
             </div>
 
             {/* Confirm Password */}
             <div className="space-y-2">
-              <label className="block text-sm font-medium text-[#F9FAFB]">Confirm Password</label>
+              <label className="block text-sm font-medium text-foreground">Confirm Password</label>
               <div className="relative">
                 <Input
                   type={showConfirmPassword ? 'text' : 'password'}
@@ -184,12 +184,12 @@ export default function RegisterPage() {
                   placeholder="••••••••"
                   value={formData.confirmPassword}
                   onChange={handleChange}
-                  className="bg-[#1A2332] border-[#2D3A4F] text-[#F9FAFB] placeholder-[#4B5563] pr-10"
+                  className="bg-card border-border text-foreground placeholder:text-muted-foreground pr-10"
                 />
                 <button
                   type="button"
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#4B5563] hover:text-[#2563EB]"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-primary"
                 >
                   {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
@@ -197,33 +197,33 @@ export default function RegisterPage() {
             </div>
 
             {/* Submit Button */}
-            <Button className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white py-6 text-base font-semibold">
+            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-6 text-base font-semibold">
               Create Account
             </Button>
           </form>
 
           {/* Divider */}
           <div className="my-6 flex items-center gap-4">
-            <div className="flex-1 h-px bg-[#2D3A4F]"></div>
-            <span className="text-xs text-[#4B5563]">ALREADY REGISTERED?</span>
-            <div className="flex-1 h-px bg-[#2D3A4F]"></div>
+            <div className="flex-1 h-px bg-border"></div>
+            <span className="text-xs text-muted-foreground/70">ALREADY REGISTERED?</span>
+            <div className="flex-1 h-px bg-border"></div>
           </div>
 
           {/* Login Link */}
-          <p className="text-center text-[#9CA3AF]">
+          <p className="text-center text-muted-foreground">
             Already have an account?{' '}
-            <Link href="/login" className="text-[#2563EB] hover:text-[#22D3EE] font-medium">
+            <Link href="/login" className="text-primary hover:text-accent font-medium">
               Sign In
             </Link>
           </p>
 
           {/* Terms Notice */}
-          <div className="mt-6 p-4 bg-[#1A2332]/50 border border-[#2D3A4F] rounded-lg">
-            <p className="text-xs text-[#9CA3AF] text-center">
+          <div className="mt-6 p-4 bg-card/50 border border-border rounded-lg">
+            <p className="text-xs text-muted-foreground text-center">
               By creating an account, you agree to our{' '}
-              <Link href="#" className="text-[#2563EB] hover:text-[#22D3EE]">Terms of Service</Link>
+              <Link href="#" className="text-primary hover:text-accent">Terms of Service</Link>
               {' '}and{' '}
-              <Link href="#" className="text-[#2563EB] hover:text-[#22D3EE]">Privacy Policy</Link>
+              <Link href="#" className="text-primary hover:text-accent">Privacy Policy</Link>
             </p>
           </div>
         </div>

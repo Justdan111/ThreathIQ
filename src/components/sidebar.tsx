@@ -59,7 +59,7 @@ export default function Sidebar({
       >
         <div className="flex flex-col h-full">
           {/* Logo */}
-          <div className="flex items-center gap-3 px-6 py-6 border-b border-sidebar-border">
+          <div className="flex items-center gap-3 px-6 py-5 border-b border-sidebar-border">
             <Shield className="w-8 h-8 text-primary shrink-0" />
             {!isCollapsed && <span className="text-xl font-bold">ThreatIQ</span>}
           </div>
