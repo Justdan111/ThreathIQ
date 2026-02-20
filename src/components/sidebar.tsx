@@ -8,12 +8,7 @@ import {
   X,
   Home,
   Activity,
-  Map,
   AlertCircle,
-  Users,
-  BarChart3,
-  Bell,
-  Settings,
   LogOut,
   Shield,
   HelpCircle,
@@ -21,22 +16,18 @@ import {
 
 const SIDEBAR_ITEMS = [
   { icon: Home, label: 'Dashboard', href: '/dashboard' },
-  { icon: Activity, label: 'Threat Feed', href: '/threats' },
-  { icon: Map, label: 'Map Intelligence', href: '/map' },
-  { icon: AlertCircle, label: 'Report Threat', href: '/threats/report' },
-  { icon: Users, label: 'Community', href: '/community' },
-  { icon: BarChart3, label: 'Analytics', href: '/analytics' },
-  { icon: Bell, label: 'Notifications', href: '/notifications' },
+  { icon: Activity, label: 'Threat Feed', href: '/threat' },
+  { icon: AlertCircle, label: 'Report Incident', href: '/threat/report' },
 ];
 
-const ADMIN_ITEMS = [
-  { icon: Shield, label: 'Moderation', href: '/admin' },
-  { icon: Users, label: 'Users', href: '/admin/users' },
-  { icon: AlertCircle, label: 'Threats', href: '/admin/threats' },
-];
+// Phase 3: Admin items (hidden for MVP)
+// const ADMIN_ITEMS = [
+//   { icon: Shield, label: 'Moderation', href: '/admin' },
+//   { icon: Users, label: 'Users', href: '/admin/users' },
+//   { icon: AlertCircle, label: 'Threats', href: '/admin/threats' },
+// ];
 
 const BOTTOM_ITEMS = [
-  { icon: Settings, label: 'Settings', href: '/settings' },
   { icon: HelpCircle, label: 'Help', href: '#' },
 ];
 
@@ -53,7 +44,7 @@ export default function Sidebar({
   isCollapsed, 
   setIsCollapsed 
 }: SidebarProps) {
-  const [isAdmin] = useState(true); // TODO: Get from auth context
+  // const [isAdmin] = useState(true); // Phase 3: re-enable admin section
   const pathname = usePathname();
 
   const isActive = (href: string) => pathname === href;
@@ -116,33 +107,7 @@ export default function Sidebar({
               ))}
             </div>
 
-            {/* Admin Section */}
-            {isAdmin && (
-              <div>
-                {!isCollapsed && (
-                  <p className="px-3 py-2 text-xs font-semibold text-[#4B5563] uppercase tracking-wider mt-6">
-                    Administration
-                  </p>
-                )}
-                {isCollapsed && <div className="border-t border-[#2D3A4F] my-4"></div>}
-                {ADMIN_ITEMS.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setSidebarOpen(false)}
-                    className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all ${
-                      isActive(item.href)
-                        ? 'bg-[#E63946]/20 text-[#E63946] border border-[#E63946]/50'
-                        : 'text-[#9CA3AF] hover:bg-[#1A2332] hover:text-[#F9FAFB]'
-                    } ${isCollapsed ? 'justify-center' : ''}`}
-                    title={isCollapsed ? item.label : ''}
-                  >
-                    <item.icon className="w-5 h-5 shrink-0" />
-                    {!isCollapsed && <span className="text-sm font-medium">{item.label}</span>}
-                  </Link>
-                ))}
-              </div>
-            )}
+            {/* Admin Section — Phase 3: uncomment when role-based access is ready */}
           </nav>
 
           {/* Bottom Items */}
