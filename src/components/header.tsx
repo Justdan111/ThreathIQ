@@ -2,6 +2,7 @@
 
 
 import { Menu, X, Bell } from 'lucide-react';
+import { ModeToggle } from './mode-toogle';
 
 interface HeaderProps {
   sidebarOpen: boolean;
@@ -32,12 +33,13 @@ export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
         </div>
 
         <div className="flex items-center gap-4">
+          <ModeToggle/>
           <button className="p-2 hover:bg-[#1A2332] rounded-lg transition relative">
             <Bell className="w-5 h-5" />
             <span className="absolute top-1 right-1 w-2 h-2 bg-[#E63946] rounded-full"></span>
           </button>
           <div className="w-10 h-10 rounded-lg bg-linear-to-br from-[#2563EB] to-[#22D3EE] flex items-center justify-center font-semibold">
-            SA
+            JD
           </div>
         </div>
       </div>
