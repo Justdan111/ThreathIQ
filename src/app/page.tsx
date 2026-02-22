@@ -688,7 +688,7 @@ export default function LandingPage() {
                     <Button 
                       size="lg"
                       variant="outline"
-                      className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-xl"
+                      className="border-2 border-white text-primary dark:text-white hover:bg-white/10 px-8 py-6 text-lg backdrop-blur-xl"
                     >
                       <MessageSquare className="mr-2 w-5 h-5" />
                       Contact Us
