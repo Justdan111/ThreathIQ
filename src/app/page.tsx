@@ -7,6 +7,34 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useMemo } from 'react';
 
+// Helper function to generate random animated circles
+function generateAnimatedCircles() {
+  return Array.from({ length: 20 }, () => ({
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    duration: 3 + Math.random() * 2,
+    delay: Math.random() * 2,
+  }));
+}
+
+// Helper function to generate marker data
+function generateMarkerData() {
+  return [
+    { left: '20%', top: '30%', severity: 'low' },
+    { left: '60%', top: '20%', severity: 'high' },
+    { left: '45%', top: '60%', severity: 'medium' },
+    { left: '75%', top: '45%', severity: 'low' },
+    { left: '30%', top: '70%', severity: 'critical' },
+    { left: '85%', top: '35%', severity: 'medium' },
+    { left: '15%', top: '50%', severity: 'low' },
+    { left: '55%', top: '80%', severity: 'high' },
+  ].map(marker => ({
+    ...marker,
+    duration: 2 + Math.random() * 2,
+    delay: Math.random() * 2,
+  }));
+}
+
 // Animation variants
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -53,32 +81,10 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
 
 export default function LandingPage() {
   // Precompute random positions for animated circles (for CTA section)
-  const animatedCircles = useMemo(() => {
-    // Precompute random values only once for purity
-    const randomValues = Array.from({ length: 20 }, () => ({
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      duration: 3 + Math.random() * 2,
-      delay: Math.random() * 2,
-    }));
-    return randomValues;
-  }, []);
+  const animatedCircles = useMemo(() => generateAnimatedCircles(), []);
 
   // Precompute marker data for dashboard preview map
-  const markerData = useMemo(() => [
-    { left: '20%', top: '30%', severity: 'low' },
-    { left: '60%', top: '20%', severity: 'high' },
-    { left: '45%', top: '60%', severity: 'medium' },
-    { left: '75%', top: '45%', severity: 'low' },
-    { left: '30%', top: '70%', severity: 'critical' },
-    { left: '85%', top: '35%', severity: 'medium' },
-    { left: '15%', top: '50%', severity: 'low' },
-    { left: '55%', top: '80%', severity: 'high' },
-  ].map(marker => ({
-    ...marker,
-    duration: 2 + Math.random() * 2,
-    delay: Math.random() * 2,
-  })), []);
+  const markerData = useMemo(() => generateMarkerData(), []);
 
   return (
     <div className="min-h-screen bg-background overflow-hidden">
