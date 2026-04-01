@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import {
   AlertTriangle,
   MapPin,
@@ -98,13 +99,13 @@ export default function DashboardPage() {
     <div className="space-y-6 pb-12">
       {/* Header with Search and Status */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <a
+        <Link
           href="/threat/report"
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-sm transition"
         >
           <AlertTriangle className="w-4 h-4" />
           Report Incident
-        </a>
+        </Link>
 
         <div className="flex items-center gap-3">
           <button className="p-2 rounded-lg border border-border hover:bg-muted transition">
